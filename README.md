@@ -1,2 +1,1 @@
-Working through the freeCodeCamp projects:<br />
-https://learn.freecodecamp.org/
+Working through the [freeCodeCamp projects](https://learn.freecodecamp.org/)
