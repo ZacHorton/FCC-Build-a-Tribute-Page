@@ -1,15 +1,45 @@
-label {
-  display: block;
-}
+body {
+    margin-top: 3em;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: .2em;
+  }
+  
+  h2 {
+    font-weight: normal;
+    margin: 0 .5em 1.5em .5em;
+    font-size: 1.5em;
+  }
+  
+  fieldset {
+    padding: 2em;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.25em;
+  }
+  
+  input {
+    margin: 10px 0 25px;
+    padding: .4em;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
 
-input {
-  margin: 10px 0 0 0;
-  width: 100%;
-  min-height: 2em;
-}
-
-.inline {
-  width: unset;
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
-}
+  select {
+    display: block;
+    margin: 10px 0 25px;
+    padding: .4em;
+    width: 100%;
+  }
