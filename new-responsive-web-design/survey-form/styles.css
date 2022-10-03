@@ -1,45 +1,76 @@
 body {
-    margin-top: 3em;
-  }
-  h1, h2 {
-    text-align: center;
-  }
-  
-  h1 {
-    margin-bottom: .2em;
-  }
-  
-  h2 {
-    font-weight: normal;
-    margin: 0 .5em 1.5em .5em;
-    font-size: 1.5em;
-  }
-  
-  fieldset {
-    padding: 2em;
-  }
-  
-  label {
-    display: block;
-    font-size: 1.25em;
-  }
-  
-  input {
-    margin: 10px 0 25px;
-    padding: .4em;
-    width: 100%;
-    min-height: 2em;
-  }
-  
-  .inline {
-    width: unset;
-    margin: 0 0.5em 0 0;
-    vertical-align: middle;
-  }
+  margin-top: 3em;
+}
 
-  select {
-    display: block;
-    margin: 10px 0 25px;
-    padding: .4em;
-    width: 100%;
-  }
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: .2em;
+}
+
+h2 {
+  font-weight: normal;
+  margin: 0 .5em 1.5em .5em;
+  font-size: 1.5em;
+}
+
+fieldset {
+  padding: 2em;
+}
+
+label {
+  display: block;
+  font-size: 1.25em;
+}
+
+::placeholder {
+  font-size: 1.25em;
+}
+
+input, select {
+  margin: 10px 0 25px;
+  padding: 13px 12px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+}
+
+select {
+  display: block;
+  font-size: .8em;
+  color: #757575;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+#recommend {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-bottom: 5px;
+  transform: scale(1.25);
+}
+
+#favorite {
+  margin-top: 35px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+span {
+  font-size: .8em;
+}
+
+#improved {
+  margin-bottom: 5px;
+}
