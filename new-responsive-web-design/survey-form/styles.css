@@ -1,76 +1,85 @@
-body {
-  margin-top: 3em;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h1, h2 {
+header {
+  margin: 2.6em auto;
   text-align: center;
 }
 
-h1 {
-  margin-bottom: .2em;
+h1, h2 {
+  margin: 5px;
 }
 
 h2 {
   font-weight: normal;
-  margin: 0 .5em 1.5em .5em;
-  font-size: 1.5em;
-}
+} 
 
 fieldset {
+  max-width: 720px;
   padding: 2em;
-}
-
-label {
-  display: block;
-  font-size: 1.25em;
+  margin: 0 auto;
 }
 
 ::placeholder {
   font-size: 1.25em;
 }
 
-input, select {
+/* label {
+  display: block;
+  font-size: 1.25em;
+} */
+
+.label-block, .select-block, textarea {
+  display: block;
+}
+
+
+
+/* input, select {
   margin: 10px 0 25px;
   padding: 13px 12px 10px;
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ced4da;
-}
+} */
 
-select {
+/* select {
   display: block;
   font-size: .8em;
   color: #757575;
-}
+} */
 
-.inline {
+/* .inline {
   width: unset;
   margin: 0 0.5em 0 0;
   vertical-align: middle;
-}
+} */
 
-#recommend {
+/* #recommend {
   margin-bottom: 10px;
-}
+} */
 
-input[type="radio"] {
+/* input[type="radio"] {
   margin-bottom: 5px;
   transform: scale(1.25);
-}
+} */
 
-#favorite {
+/* #favorite {
   margin-top: 35px;
-}
+} */
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 10px;
-}
+} */
 
 span {
   font-size: .8em;
 }
 
-#improved {
+/* #improved {
   margin-bottom: 5px;
-}
+} */
