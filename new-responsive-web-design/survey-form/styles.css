@@ -5,7 +5,7 @@
 }
 
 header {
-  margin: 2.6em auto;
+  margin: 2.58em auto;
   text-align: center;
 }
 
@@ -15,71 +15,79 @@ h1, h2 {
 
 h2 {
   font-weight: normal;
-} 
+}
+
+body {
+  background-image: linear-gradient(115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)),
+    url("collab.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
 
 fieldset {
   max-width: 720px;
   padding: 2em;
-  margin: 0 auto;
+  margin: auto;
+  background-color: rgba(27, 27, 50, 0.8);
+  border: none;
 }
 
 ::placeholder {
   font-size: 1.25em;
 }
 
-/* label {
-  display: block;
+label {
   font-size: 1.25em;
-} */
+}
 
-.label-block, .select-block, textarea {
+.label-block, textarea {
   display: block;
 }
 
-
-
-/* input, select {
+input[type="text"], input[type="number"], select, textarea {
   margin: 10px 0 25px;
   padding: 13px 12px 10px;
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ced4da;
-} */
+}
 
-/* select {
-  display: block;
-  font-size: .8em;
+p {
+  font-size: 1.25em;
+  margin: 0 auto 8px;
+}
+
+select {
+  font-size: 1em;
   color: #757575;
-} */
-
-/* .inline {
-  width: unset;
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
-} */
-
-/* #recommend {
-  margin-bottom: 10px;
-} */
-
-/* input[type="radio"] {
-  margin-bottom: 5px;
-  transform: scale(1.25);
-} */
-
-/* #favorite {
-  margin-top: 35px;
-} */
-
-/* input[type="checkbox"] {
-  transform: scale(1.5);
-  margin-right: 10px;
-} */
+}
 
 span {
   font-size: .8em;
 }
 
-/* #improved {
-  margin-bottom: 5px;
-} */
+input[type="radio"], input[type="checkbox"] {
+  transform: scale(1.25);
+  margin: 7px 5px 15px auto;
+}
+
+textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #37af65;
+  color: white;
+  border: none;
+  font-size: 1em;
+}
