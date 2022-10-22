@@ -5,7 +5,7 @@
 }
 
 header {
-  margin: 2.58em auto;
+  margin: 42px auto 25px;
   text-align: center;
 }
 
@@ -27,6 +27,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  margin-bottom: 0;
 }
 
 fieldset {
@@ -35,6 +36,7 @@ fieldset {
   margin: auto;
   background-color: rgba(27, 27, 50, 0.8);
   border: none;
+  height: 100%;
 }
 
 ::placeholder {
@@ -49,17 +51,17 @@ label {
   display: block;
 }
 
-input[type="text"], input[type="number"], select, textarea {
+input[type="text"], input[type="email"], input[type="number"], select, textarea  {
   margin: 10px 0 25px;
-  padding: 13px 12px 10px;
+  padding: .7em;
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ced4da;
 }
 
-p {
-  font-size: 1.25em;
-  margin: 0 auto 8px;
+select, textarea {
+  margin: 10px 0 23px;
+  padding: .4em;
 }
 
 select {
@@ -67,27 +69,33 @@ select {
   color: #757575;
 }
 
+input[type="radio"], input[type="checkbox"] {
+  transform: scale(1.25);
+  margin: 7px 5px 10px auto;
+}
+
+p {
+  font-size: 1.25em;
+  margin: 0 auto 8px;
+}
+
 span {
   font-size: .8em;
 }
 
-input[type="radio"], input[type="checkbox"] {
-  transform: scale(1.25);
-  margin: 7px 5px 15px auto;
-}
-
 textarea {
-  min-height: 120px;
+  min-height: 105px;
   width: 100%;
   padding: 0.625rem;
   resize: vertical;
 }
 
-input[type="button"] {
+input[type="submit"] {
   width: 100%;
-  padding: 15px;
+  padding: 13px;
   background-color: #37af65;
   color: white;
   border: none;
   font-size: 1em;
+  margin-bottom: 15px;
 }
