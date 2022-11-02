@@ -1,0 +1,76 @@
+/*  Style: https://design-style-guide.freecodecamp.org/  */
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
+body {
+  margin: 0;
+  padding: 1.25rem;
+  background-color: #0a0a23;
+  color: #ffffff;
+  font-family: 'Lato';
+  font-size: 1.125rem;
+
+}
+
+#intro-container {
+  font-family: 'Roboto Mono';
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #acd157;
+}
+
+figure {
+  background-color: #ffffff; 
+  color: #0a0a23; 
+  max-width: 50%;
+  padding: 25px 0;
+  margin: auto;
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: auto;
+}
+
+#img-caption {
+  padding-top: 2em;
+  font-size: 115%
+}
+
+ #img-caption a {
+  color: #002ead;
+}
+
+ #img-caption a:visited {
+  color: #5a01a7;
+}
+
+#img-caption strong {
+  color: #00471b;
+}
+
+a {
+  color: #99c9ff;
+}
+
+a:visited {
+  color:#dbb8ff;
+}
+
+strong {
+  color: #acd157;
+  font-weight: bolder;
+}
+
+#tribute-info {
+  padding: 1.25rem;
+}
+
+li {
+  padding: 0.625rem;
+}
