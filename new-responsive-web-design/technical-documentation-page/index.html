@@ -11,44 +11,397 @@
 
 <body>
 	<nav id="navbar">
-		<header>CSS Documentation</header>
+		<header>Python Documentation</header>
 		<ul>
-			<li>Section 1</li>
-			<li>Section 2</li>
-			<li>Section 3</li>
-			<li>Section 4</li>
-			<li>Section 5</li>
-			<li>Section 6</li>
-			<li>Section 7</li>
-			<li>Section 8</li>
-			<li>Section 9</li>
-			<li>Section 10</li>
-			<li>Section 11</li>
-			<li>Section 12</li>
-			<li>Section 13</li>
-			<li>Reference</li>
+			<li><a class="nav-link" href="#introduction">Introduction</a></li>
+			<li><a class="nav-link" href="#comments">Comments</a></li>
+			<li><a class="nav-link" href="#variables">Variables</a></li>
+			<li><a class="nav-link" href="#data-types">Data Types</a></li>
+			<li><a class="nav-link" href="#numbers">Numbers</a></li>
+			<li><a class="nav-link" href="#casting">Casting</a></li>
+			<li><a class="nav-link" href="#strings">Strings</a></li>
+			<li><a class="nav-link" href="#slicing-strings">Slicing Strings</a></li>
+			<li><a class="nav-link" href="#booleans">Booleans</a></li>
+			<li><a class="nav-link" href="#operators">Operators</a></li>
+			<li><a class="nav-link" href="#lists">Lists</a></li>
+			<li><a class="nav-link" href="#tuples">Tuples</a></li>
+			<li><a class="nav-link" href="#sets">Sets</a></li>
+			<li><a class="nav-link" href="#dictionaries">Dictionaries</a></li>
+			<li><a class="nav-link" href="#reference">Reference</a></li>
 		</ul>
 	</nav>
 	<main id="main-doc">
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section class="main-section" id="Reference">
+		<section class="main-section" id="introduction">
+			<header>Python Introduction</header>
+			<article>
+				<h2>What is Python?</h2>
+				<p>Python is a popular programming language. It was created by Guido van Rossum, and released in
+					1991.<br>
+					It is used for:</p>
+				<ul>
+					<li>web development (server-side),</li>
+					<li>software development,</li>
+					<li>mathematics,</li>
+					<li>system scripting.</li>
+				</ul>
+				<h3>What can Python do?</h3>
+				<ul>
+					<li>Python can be used on a server to create web applications.</li>
+					<li>Python can be used alongside software to create workflows.</li>
+					<li>Python can connect to database systems. It can also read and modify files.</li>
+					<li>Python can be used to handle big data and perform complex mathematics.</li>
+					<li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+				</ul>
+				<h3>Why Python?</h3>
+				<ul>
+					<li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+					<li>Python has a simple syntax similar to the English language.</li>
+					<li>Python has syntax that allows developers to write programs with fewer lines than some other
+						programming languages.</li>
+					<li>Python runs on an interpreter system, meaning that code can be executed as soon as it is
+						written. This means that prototyping can be very quick.</li>
+					<li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+				</ul>
+
+			</article>
+		</section>
+		<section class="main-section" id="comments">
+			<header>Python Comments</header>
+			<article>
+				<p>Comments can be used to explain Python code.<br>
+					Comments can be used to make the code more readable.<br>
+					Comments can be used to prevent execution when testing code.</p>
+				<h2>Creating a Comment</h2>
+				<p>Comments starts with a <code>#</code>, and Python will ignore them:</p>
+				<pre><code>#This is a comment<br>print("Hello, World!")</code></pre>
+				<p>Comments can be placed at the end of a line, and Python will ignore the rest of the line:</p>
+				<pre><code>print("Hello, World!") #This is a comment</code></pre>
+				<p>A comment does not have to be text that explains the code, it can also be used to prevent Python from
+					executing code:</p>
+				<pre><code>#print("Hello, World!")<br>print("Cheers, Mate!")</code></pre>
+				<h2>Multi Line Comments</h2>
+				<p>Python does not really have a syntax for multi line comments. To add a multiline comment you could
+					insert a # for each line:</p>
+				<pre><code>#This is a comment<br>#written in<br>#more than just one line<br>print("Hello, World!")</code></pre>
+				<p>Or, not quite as intended, you can use a multiline string.
+					Since Python will ignore string literals that are not assigned to a variable, you can add a
+					multiline string (triple quotes) in your code, and place your comment inside it:</p>
+				<pre><code>"""<br>This is a comment<br>written in<br>more than just one line<br>"""<br>print("Hello, World!")</code></pre>
+				<p>As long as the string is not assigned to a variable, Python will read the code, but then ignore it,
+					and you have made a multiline comment.</p>
+			</article>
+		</section>
+		<section class="main-section" id="variables">
+			<header>Python Variables</header>
+			<article>
+				<h2>Variables</h2>
+				<p>Variables are containers for storing data values.</p>
+				<h3>Creating Variables</h3>
+				<p>Python has no command for declaring a variable.<br>
+					A variable is created the moment you first assign a value to it.</p>
+				<pre><code>x = 5<br>y = "John"<br>print(x)<br>print(y)<br></code></pre>
+				<p>Variables do not need to be declared with any particular type, and can even change type after they
+					have been set.</p>
+				<pre><code>x = 4       # x is of type int<br>x = "Sally" # x is now of type str<br>print(x)</code></pre>
+				<h3>Casting</h3>
+				<p>If you want to specify the data type of a variable, this can be done with casting.</p>
+				<pre><code>x = str(3)    # x will be '3'<br>y = int(3)    # y will be 3<br>z = float(3)  # z will be 3.0</code></pre>
+				<h3>Get the Type</h2>
+					<pre><code>x = 5<br>y = "John"<br>print(type(x))<br>print(type(y))</code></pre>
+					<h3>Single or Double Quotes?</h3>
+					<p>String variables can be declared either by using single or double quotes:</p>
+					<pre><code>x = "John"<br># is the same as<br>x = 'John'</code></pre>
+					<h3>Case-Sensitive</h3>
+					<p>Variable names are case-sensitive.</p>
+					<pre><code>a = 4<br>A = "Sally"<br>#A will not overwrite a</code></pre>
+			</article>
+		</section>
+		<section class="main-section" id="data-types">
+			<header>Python Data Types</header>
+			<article>
+				<h2>Built-in Data Types</h2>
+				<p>In programming, data type is an important concept.<br>
+					Variables can store data of different types, and different types can do different things.<br>
+					Python has the following data types built-in by default, in these categories:<br>
+				<pre>Text Type:	str</pre>
+				<pre>Numeric Types:	<code>int, float, complex</code></pre>
+				<pre>Sequence Types:	<code>list, tuple, range</code></pre>
+				<pre>Mapping Type:	<code>dict</code></pre>
+				<pre>Set Types:	<code>set, frozenset</code></pre>
+				<pre>Boolean Type:	<code>bool</code></pre>
+				<pre>Binary Types:	<code>bytes, bytearray, memoryview</code></pre>
+				<pre>None Type:	<code>NoneType</code></pre>
+				</p>
+				<h3>Getting the Data Type</h3>
+				<p>You can get the data type of any object by using the <code>type()</code> function:</p>
+				<pre><code>x = 5<br>print(type(x))</code></pre>
+				<h3>Setting the Data Type</h3>
+				<p>In Python, the data type is set when you assign a value to a variable:</p>
+				<p>table here</p>
+				<h3>Setting the Specific Data Type</h3>
+				<p>If you want to specify the data type, you can use the following constructor functions:</p>
+			</article>
+		</section>
+		<section class="main-section" id="numbers">
+			<header>Python Numbers</header>
+			<article>
+				<h2>Python Numbers</h2>
+				<p>There are three numeric types in Python:
+				<ol>
+					<li>int</li>
+					<li>float</li>
+					<li>complex</li>
+				</ol>
+				Variables of numeric types are created when you assign a value to them:<br>
+				<code>x = 1    # int<br>
+						y = 2.8  # float<br>
+						z = 1j   # complex<br>
+					</code>
+				To verify the type of any object in Python, use the <code>type()</code> function:
+				<code>
+						print(type(x))<br>
+						print(type(y))<br>
+						print(type(z))<br>
+					</code>
+				</p>
+				<h3>Int</h3>
+				<p>Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</p>
+				<h3>Float</h3>
+				<p>Float, or "floating point number" is a number, positive or negative, containing one or more
+					decimals.<br>
+					Float can also be scientific numbers with an "e" to indicate the power of 10.</p>
+				<h3>Complex</h3>
+				<p>Complex numbers are written with a "j" as the imaginary part:</p>
+				<h3>Type Conversion</h3>
+				<p>You can convert from one type to another with the int(), float(), and complex() methods:</p>
+				<h3>Random Number</h3>
+				<p>Python does not have a random() function to make a random number, but Python has a built-in module
+					called random that can be used to make random numbers:</p>
+			</article>
+		</section>
+		<section class="main-section" id="casting">
+			<header>Python Casting</header>
+			<article>
+				<h2>Specify a Variable Type</h2>
+				<p>There may be times when you want to specify a type on to a variable. This can be done with casting.
+					Python is an object-orientated language, and as such it uses classes to define data types, including
+					its primitive types.</p>
+				<p>Casting in python is therefore done using constructor functions:<br>
+				<ul>
+					<li>int() - constructs an integer number from an integer literal, a float literal (by removing all
+						decimals), or a string literal (providing the string represents a whole number)/li>
+					<li>float() - constructs a float number from an integer literal, a float literal or a string literal
+						(providing the string represents a float or an integer)</li>
+					<li>str() - constructs a string from a wide variety of data types, including strings, integer
+						literals and float literals</li>
+				</ul>
+				</p>
+			</article>
+		</section>
+		<section class="main-section" id="strings">
+			<header>Python Strings</header>
+			<article>
+				<h2>Strings</h2>
+				<p>Strings in python are surrounded by either single quotation marks, or double quotation marks.<br>
+					'hello' is the same as "hello".<br>
+					You can display a string literal with the print() function:</p>
+				<h3>Assign String to a Variable</h3>
+				<p>Assigning a string to a variable is done with the variable name followed by an equal sign and the
+					string:</p>
+				<h3>Multiline Strings</h3>
+				<p>You can assign a multiline string to a variable by using three quotes:</p>
+				<h3>Strings are Arrays</h3>
+				<p>Like many other popular programming languages, strings in Python are arrays of bytes representing
+					unicode characters.<br>
+					However, Python does not have a character data type, a single character is simply a string with a
+					length of 1.<br>
+					Square brackets can be used to access elements of the string.</p>
+				<h3>Looping Through a String</h3>
+				<p>Since strings are arrays, we can loop through the characters in a string, with a for loop.</p>
+				<h3>String Length</h3>
+				<p>To get the length of a string, use the len() function.</p>
+				<h3>Check String</h3>
+				<p>To check if a certain phrase or character is present in a string, we can use the keyword in.</p>
+				<h3>Check if NOT</h3>
+				<p>To check if a certain phrase or character is NOT present in a string, we can use the keyword not in.
+				</p>
+			</article>
+		</section>
+		<section class="main-section" id="slicing-strings">
+			<header>Python - Slicing Strings</header>
+			<article>
+				<h2>Slicing</h2>
+				<p>You can return a range of characters by using the slice syntax.<br>
+					Specify the start index and the end index, separated by a colon, to return a part of the string.</p>
+				<h3>Slice From the Start</h3>
+				<p>By leaving out the start index, the range will start at the first character:</p>
+				<h3>Slice To the End</h3>
+				<p>By leaving out the end index, the range will go to the end:</p>
+				<h3>Negative Indexing</h3>
+				<p>Use negative indexes to start the slice from the end of the string:</p>
+			</article>
+		</section>
+		<section class="main-section" id="booleans">
+			<header>Python Booleans</header>
+			<article>
+				<p>Booleans represent one of two values: True or False.</p>
+				<h2>Boolean Values</h2>
+				<p>In programming you often need to know if an expression is True or False.<br>
+					You can evaluate any expression in Python, and get one of two answers, True or False.<br>
+					When you compare two values, the expression is evaluated and Python returns the Boolean answer:</p>
+				<p>When you run a condition in an if statement, Python returns True or False:</p>
+				<h3>Evaluate Values and Variables</h3>
+				<p>The bool() function allows you to evaluate any value, and give you True or False in return,</p>
+				<h3>Most Values are True</h3>
+				<p>Almost any value is evaluated to True if it has some sort of content.<br>
+					Any string is True, except empty strings.<br>
+					Any number is True, except 0.<br>
+					Any list, tuple, set, and dictionary are True, except empty ones.</p>
+				<h3>Some Values are False</h3>
+				<p>In fact, there are not many values that evaluate to False, except empty values, such as (), [], {},
+					"", the number 0, and the value None. And of course the value False evaluates to False.</p>
+				<h3>Functions can Return a Boolean</h3>
+				<p>You can create functions that returns a Boolean Value:</p>
+			</article>
+		</section>
+		<section class="main-section" id="operators">
+			<header>Python Operators</header>
+			<article>
+				<h2>Python Operators</h2>
+				<p>Operators are used to perform operations on variables and values.<br>
+					In the example below, we use the + operator to add together two values:</p>
+				<p>Python divides the operators in the following groups:<br>
+				<ul>
+					<li>Arithmetic operators</li>
+					<li>Assignment operators</li>
+					<li>Comparison operators</li>
+					<li>Logical operators</li>
+					<li>Identity operators</li>
+					<li>Membership operators</li>
+					<li>Bitwise operators
+					</li>
+				</ul>
+				</p>
+				<h3>Python Arithmetic Operators</h3>
+				<p>Arithmetic operators are used with numeric values to perform common mathematical operations:</p>
+				<h3>Python Assignment Operators</h3>
+				<p>Assignment operators are used to assign values to variables:</p>
+				<h3>Python Comparison Operators</h3>
+				<p>Comparison operators are used to compare two values:</p>
+				<h3>Python Logical Operators</h3>
+				<p>Logical operators are used to combine conditional statements:</p>
+				<h3>Python Identity Operators</h3>
+				<p>Identity operators are used to compare the objects, not if they are equal, but if they are actually
+					the same object, with the same memory location:</p>
+				<h3>Python Membership Operators</h3>
+				<p>Membership operators are used to test if a sequence is presented in an object:</p>
+				<h3>Python Bitwise Operators</h3>
+				<p>Bitwise operators are used to compare (binary) numbers:</p>
+			</article>
+		</section>
+		<section class="main-section" id="lists">
+			<header>Python Lists</header>
+			<article>
+				<code>mylist = ["apple", "banana", "cherry"]</code>
+				<h2>List</h2>
+				<p>Lists are used to store multiple items in a single variable.<br>
+					Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are
+					Tuple, Set, and Dictionary, all with different qualities and usage.<br>
+					Lists are created using square brackets:</p>
+				<h3>List Items</h3>
+				<p>List items are ordered, changeable, and allow duplicate values.<br>
+					List items are indexed, the first item has index [0], the second item has index [1] etc.</p>
+				<h3>Ordered</h3>
+				<p>When we say that lists are ordered, it means that the items have a defined order, and that order will
+					not change.<br>
+					If you add new items to a list, the new items will be placed at the end of the list.<br>
+					Note: There are some list methods that will change the order, but in general: the order of the items
+					will not change.</p>
+				<h3>Changeable</h3>
+				<p>The list is changeable, meaning that we can change, add, and remove items in a list after it has been
+					created.</p>
+			</article>
+		</section>
+		<section class="main-section" id="tuples">
+			<header>Python Tuples</header>
+			<article>
+				<code>mytuple = ("apple", "banana", "cherry")</code>
+				<h2>Tuple</h2>
+				<p>Tuples are used to store multiple items in a single variable.<br>
+					Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are
+					List, Set, and Dictionary, all with different qualities and usage.<br>
+					A tuple is a collection which is ordered and <strong>unchangeable</strong>.<br>
+					Tuples are written with round brackets.</p>
+				<h3>Tuple Items</h3>
+				<p>Tuple items are ordered, unchangeable, and allow duplicate values.<br>
+					Tuple items are indexed, the first item has index [0], the second item has index [1] etc.</p>
+				<h3>Ordered</h3>
+				<p>When we say that tuples are ordered, it means that the items have a defined order, and that order
+					will not change.</p>
+				<h3>Unchangeable</h3>
+				<p>Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been
+					created.</p>
+				<h3>Allow Duplicates</h3>
+				<p>Since tuples are indexed, they can have items with the same value:</p>
+			</article>
+		</section>
+		<section class="main-section" id="sets">
+			<header>Python Sets</header>
+			<article>
+				<code>myset = {"apple", "banana", "cherry"}</code>
+				<h2>Set</h2>
+				<p>Sets are used to store multiple items in a single variable.<br>
+					Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are
+					List, Tuple, and Dictionary, all with different qualities and usage.<br>
+					A set is a collection which is unordered, unchangeable*, and unindexed.<br>
+					* Note: Set items are unchangeable, but you can remove items and add new items.<br>
+					Sets are written with curly brackets.</p>
+				<h3>Set Items</h3>
+				<p>Set items are unordered, unchangeable, and do not allow duplicate values.</p>
+				<h3>Unordered</h3>
+				<p>Unordered means that the items in a set do not have a defined order.<br>
+					Set items can appear in a different order every time you use them, and cannot be referred to by
+					index or key.</p>
+				<h3>Unchangeable</h3>
+				<p>Set items are unchangeable, meaning that we cannot change the items after the set has been
+					created.<br>
+					Once a set is created, you cannot change its items, but you can remove items and add new items.</p>
+				<h3>Duplicates Not Allowed</h3>
+				<p>Sets cannot have two items with the same value.</p>
+				<h3>Get the Length of a Set</h3>
+			</article>
+		</section>
+		<section class="main-section" id="dictionaries">
+			<header>Python Dictionaries</header>
+			<article>
+				<h2>Dictionary</h2>
+				<p>Dictionaries are used to store data values in key:value pairs.<br>
+					A dictionary is a collection which is ordered*, changeable and do not allow duplicates.</p>
+				<h3>Dictionary Items</h3>
+				<p>Dictionary items are ordered, changeable, and does not allow duplicates.<br>
+					Dictionary items are presented in key:value pairs, and can be referred to by using the key name.</p>
+				<h3>Ordered or Unordered?</h3>
+				<p>As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are
+					unordered.<br>
+					When we say that dictionaries are ordered, it means that the items have a defined order, and that
+					order will not change.<br>
+					Unordered means that the items does not have a defined order, you cannot refer to an item by using
+					an index.</p>
+				<h3>Changeable</h3>
+				<p>Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has
+					been created.</p>
+				<h3>Duplicates Not Allowed</h3>
+				<p>Dictionaries cannot have two items with the same key:</p>
+				<h3>Dictionary Length</h3>
+				<p>To determine how many items a dictionary has, use the len() function:</p>
+			</article>
+		</section>
+		<section class="main-section" id="reference">
 			<header>Reference</header>
 			<article>
 				<ul>
 					<li>All the documentation in this page is taken from <a
-							href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a></li>
+							href="https://www.w3schools.com/python/default.asp" target="_blank">W3Schools</a></li>
 				</ul>
 			</article>
 		</section>
