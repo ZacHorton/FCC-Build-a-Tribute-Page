@@ -33,6 +33,7 @@
 	<main id="main-doc">
 		<section class="main-section" id="introduction">
 			<header>Python Introduction</header>
+			<hr>
 			<article>
 				<h2>What is Python?</h2>
 				<p>Python is a popular programming language. It was created by Guido van Rossum, and released in
@@ -62,125 +63,193 @@
 						written. This means that prototyping can be very quick.</li>
 					<li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
 				</ul>
-
 			</article>
 		</section>
 		<section class="main-section" id="comments">
 			<header>Python Comments</header>
+			<hr>
 			<article>
 				<p>Comments can be used to explain Python code.<br>
 					Comments can be used to make the code more readable.<br>
 					Comments can be used to prevent execution when testing code.</p>
 				<h2>Creating a Comment</h2>
-				<p>Comments starts with a <code>#</code>, and Python will ignore them:</p>
-				<pre><code>#This is a comment<br>print("Hello, World!")</code></pre>
+				<p>Comments starts with a <span class="crimson">#</span>, and Python will ignore them:</p>
+				<code><span class="green">#This is a comment</span><br><span class="blue">print</span>(<span class="brown">Hello, World!"</span>)</code>
 				<p>Comments can be placed at the end of a line, and Python will ignore the rest of the line:</p>
-				<pre><code>print("Hello, World!") #This is a comment</code></pre>
+				<code><span class="blue">print</span>(<span class="brown">"Hello, World!"</span>) <span class="green">#This is a comment</span></code>
 				<p>A comment does not have to be text that explains the code, it can also be used to prevent Python from
 					executing code:</p>
-				<pre><code>#print("Hello, World!")<br>print("Cheers, Mate!")</code></pre>
+				<code><span class="green">#print("Hello, World!")</span><br><span class="blue">print</span>(<span class="brown">"Cheers, Mate!"</span>)</code>
 				<h2>Multi Line Comments</h2>
 				<p>Python does not really have a syntax for multi line comments. To add a multiline comment you could
-					insert a # for each line:</p>
-				<pre><code>#This is a comment<br>#written in<br>#more than just one line<br>print("Hello, World!")</code></pre>
+					insert a <span class="crimson">#</span> for each line:</p>
+				<code><span class="green">#This is a comment<br>#written in<br>#more than just one line<br></span><span class="blue">print</span>(<span class="brown">Hello, World!"</span>)</code>
 				<p>Or, not quite as intended, you can use a multiline string.
 					Since Python will ignore string literals that are not assigned to a variable, you can add a
 					multiline string (triple quotes) in your code, and place your comment inside it:</p>
-				<pre><code>"""<br>This is a comment<br>written in<br>more than just one line<br>"""<br>print("Hello, World!")</code></pre>
+				<code><span class="green">"""<br>This is a comment<br>written in<br>more than just one line<br>"""<br></span><span class="blue">print</span>(<span class="brown">Hello, World!"</span>)</code>
 				<p>As long as the string is not assigned to a variable, Python will read the code, but then ignore it,
 					and you have made a multiline comment.</p>
 			</article>
 		</section>
 		<section class="main-section" id="variables">
 			<header>Python Variables</header>
+			<hr>
 			<article>
 				<h2>Variables</h2>
 				<p>Variables are containers for storing data values.</p>
 				<h3>Creating Variables</h3>
 				<p>Python has no command for declaring a variable.<br>
 					A variable is created the moment you first assign a value to it.</p>
-				<pre><code>x = 5<br>y = "John"<br>print(x)<br>print(y)<br></code></pre>
+				<code>x = <span class="red">5</span><br>y = <span class="brown">"John"</span><br><span class="blue">print</span>(x)<br><span class="blue">print</span>(y)<br></code>
 				<p>Variables do not need to be declared with any particular type, and can even change type after they
 					have been set.</p>
-				<pre><code>x = 4       # x is of type int<br>x = "Sally" # x is now of type str<br>print(x)</code></pre>
+				<code>x = <span class="red">4</span>       <span class="green"># x is of type int<br></span>x = <span class="brown">"Sally"</span> <span class="green"># x is now of type str<br></span><span class="blue">print</span>(x)</code>
 				<h3>Casting</h3>
 				<p>If you want to specify the data type of a variable, this can be done with casting.</p>
-				<pre><code>x = str(3)    # x will be '3'<br>y = int(3)    # y will be 3<br>z = float(3)  # z will be 3.0</code></pre>
+				<code>x = <span class="blue">str</span>(<span class="red">3</span>)    <span class="green"># x will be '3'<br></span>y = <span class="blue">int</span>(<span class="red">3</span>)    <span class ="green"># y will be 3<br></span>z = <span class="blue">float</span>(<span class="red">3</span>)  <span class="green"># z will be 3.0</span></code>
 				<h3>Get the Type</h2>
-					<pre><code>x = 5<br>y = "John"<br>print(type(x))<br>print(type(y))</code></pre>
+					<code>x = <span class="red">5</span><br>y = <span class="brown">"John"</span><br><span class="blue">print</span>(<span class="blue">type</span>(x))<br><span class="blue">print</span>(<span class="blue">type</span>(y))</code>
 					<h3>Single or Double Quotes?</h3>
 					<p>String variables can be declared either by using single or double quotes:</p>
-					<pre><code>x = "John"<br># is the same as<br>x = 'John'</code></pre>
+					<code>x = <span class="brown">"John"</span><br><span class="green"># is the same as</span><br>x = <span class="brown">'John'</span></code>
 					<h3>Case-Sensitive</h3>
 					<p>Variable names are case-sensitive.</p>
-					<pre><code>a = 4<br>A = "Sally"<br>#A will not overwrite a</code></pre>
+					<code>a = <span class="red">4</span><br>A = <span class="brown">"Sally"</span><br><span class="green">#A will not overwrite a</span></code>
 			</article>
 		</section>
 		<section class="main-section" id="data-types">
 			<header>Python Data Types</header>
+			<hr>
 			<article>
 				<h2>Built-in Data Types</h2>
 				<p>In programming, data type is an important concept.<br>
 					Variables can store data of different types, and different types can do different things.<br>
 					Python has the following data types built-in by default, in these categories:<br>
-				<pre>Text Type:	str</pre>
-				<pre>Numeric Types:	<code>int, float, complex</code></pre>
-				<pre>Sequence Types:	<code>list, tuple, range</code></pre>
-				<pre>Mapping Type:	<code>dict</code></pre>
-				<pre>Set Types:	<code>set, frozenset</code></pre>
-				<pre>Boolean Type:	<code>bool</code></pre>
-				<pre>Binary Types:	<code>bytes, bytearray, memoryview</code></pre>
-				<pre>None Type:	<code>NoneType</code></pre>
+				Text Type:	<span class="crimson">str</span>
+				Numeric Types:	<span class="crimson">int, float, complex</span>
+				Sequence Types:	<span class="crimson">list, tuple, range</span>
+				Mapping Type:	<span class="crimson">dict</span>
+				Set Types:	<span class="crimson">set, frozenset</span>
+				Boolean Type:	<span class="crimson">bool</span>
+				Binary Types:	<span class="crimson">bytes, bytearray, memoryview</span>
+				None Type:	<span class="crimson">NoneType</span>
 				</p>
 				<h3>Getting the Data Type</h3>
-				<p>You can get the data type of any object by using the <code>type()</code> function:</p>
-				<pre><code>x = 5<br>print(type(x))</code></pre>
+				<p>You can get the data type of any object by using the <span class="crimson">type()</span> function:</p>
+				<code>x = <span class="red">5</span><br><span class="blue">print</span>(<span class="blue">type</span>(x))</code>
 				<h3>Setting the Data Type</h3>
 				<p>In Python, the data type is set when you assign a value to a variable:</p>
-				<p>table here</p>
+				<table>
+					<tr>
+					  <th>Example</th>
+					  <th>Data Type</th>
+					</tr>
+					<tr>
+					  <td>x = "Hello World"</td>
+					  <td>str</td>
+					</tr>
+					<tr>
+					  <td>x = 20</td>
+					  <td>int</td>
+					</tr>
+					 <tr>
+					  <td>x = 20.5</td>
+					  <td>float</td>
+					</tr>
+					<tr>
+					  <td>x = 1j</td>
+					  <td>complex</td>
+					</tr>
+					<tr>
+					  <td>x = ["apple", "banana", "cherry"]</td>
+					  <td>list</td>
+					</tr>
+					<tr>
+					  <td>x = ("apple", "banana", "cherry")</td>
+					  <td>tuple</td>
+					</tr>
+					<tr>
+					  <td>x = range(6)</td>
+					  <td>range</td>
+					</tr>
+					<tr>
+					  <td>x = {"name" : "John", "age" : 36}</td>
+					  <td>dict</td>
+					</tr>
+					<tr>
+					  <td>x = {"apple", "banana", "cherry"}</td>
+					  <td>set</td>
+					</tr>
+					<tr>
+					  <td>x = frozenset({"apple", "banana", "cherry"})</td>
+					  <td>frozenset</td>
+					</tr>
+					<tr>
+					  <td>x = True</td>
+					  <td>bool</td>
+					</tr>
+					<tr>
+					  <td>x = b"Hello"</td>
+					  <td>bytes</td>
+					</tr>
+					<tr>
+					  <td>x = bytearray(5)</td>
+					  <td>bytearray</td>
+					</tr>
+					<tr>
+					  <td>x = memoryview(bytes(5))</td>
+					  <td>memoryview</td>
+					</tr>
+					<tr>
+					  <td>x = None</td>
+					  <td>NoneType</td>
+					</tr>
+				  </table>
 				<h3>Setting the Specific Data Type</h3>
 				<p>If you want to specify the data type, you can use the following constructor functions:</p>
 			</article>
 		</section>
 		<section class="main-section" id="numbers">
 			<header>Python Numbers</header>
+			<hr>
 			<article>
 				<h2>Python Numbers</h2>
 				<p>There are three numeric types in Python:
-				<ol>
-					<li>int</li>
-					<li>float</li>
-					<li>complex</li>
-				</ol>
+				<ul>
+					<li><span class="crimson">int</span></li>
+					<li><span class="crimson">float</span></li>
+					<li><span class="crimson">complex</span></li>
+				</ul>
 				Variables of numeric types are created when you assign a value to them:<br>
-				<code>x = 1    # int<br>
-						y = 2.8  # float<br>
-						z = 1j   # complex<br>
+				<code>x = <span class="red">1</span>    <span class="green"># int</span>
+						y = <span class="red">2.8</span>  <span class="green"># float</span>
+						z = 1j   <span class="green"># complex</span>
 					</code>
-				To verify the type of any object in Python, use the <code>type()</code> function:
-				<code>
-						print(type(x))<br>
-						print(type(y))<br>
-						print(type(z))<br>
+				To verify the type of any object in Python, use the <span class="crimson">type()</span> function:
+				<code>	<span class="blue">print</span>(<span class="blue">type</span>(x))
+					<span class="blue">print</span>(<span class="blue">type</span>(y))
+					<span class="blue">print</span>(<span class="blue">type</span>(z))
 					</code>
 				</p>
 				<h3>Int</h3>
 				<p>Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.</p>
 				<h3>Float</h3>
-				<p>Float, or "floating point number" is a number, positive or negative, containing one or more
-					decimals.<br>
+				<p>Float, or "floating point number" is a number, positive or negative, containing one or more decimals.<br>
 					Float can also be scientific numbers with an "e" to indicate the power of 10.</p>
 				<h3>Complex</h3>
-				<p>Complex numbers are written with a "j" as the imaginary part:</p>
+				<p>Complex numbers are written with a "j" as the imaginary part.</p>
 				<h3>Type Conversion</h3>
-				<p>You can convert from one type to another with the int(), float(), and complex() methods:</p>
+				<p>You can convert from one type to another with the <span class="crimson">int()</span>, <span class="crimson">float()</span>, and <span class="crimson">complex()</span> methods.
+				<span class="note"><strong>Note:</strong> You cannot convert complex numbers into another number type.</span></p>
 				<h3>Random Number</h3>
-				<p>Python does not have a random() function to make a random number, but Python has a built-in module
-					called random that can be used to make random numbers:</p>
+				<p>Python does not have a <span class="crimson">random()</span> function to make a random number, but Python has a built-in module
+					called <span class="crimson">random</span> that can be used to make random numbers.</p>
 			</article>
 		</section>
 		<section class="main-section" id="casting">
 			<header>Python Casting</header>
+			<hr>
 			<article>
 				<h2>Specify a Variable Type</h2>
 				<p>There may be times when you want to specify a type on to a variable. This can be done with casting.
@@ -188,28 +257,45 @@
 					its primitive types.</p>
 				<p>Casting in python is therefore done using constructor functions:<br>
 				<ul>
-					<li>int() - constructs an integer number from an integer literal, a float literal (by removing all
+					<li><span class="crimson">int()</span> - constructs an integer number from an integer literal, a float literal (by removing all
 						decimals), or a string literal (providing the string represents a whole number)/li>
-					<li>float() - constructs a float number from an integer literal, a float literal or a string literal
+					<li><span class="crimson">float()</span> - constructs a float number from an integer literal, a float literal or a string literal
 						(providing the string represents a float or an integer)</li>
-					<li>str() - constructs a string from a wide variety of data types, including strings, integer
+					<li><span class="crimson">str()</span> - constructs a string from a wide variety of data types, including strings, integer
 						literals and float literals</li>
 				</ul>
 				</p>
+				<code>x = <span class="blue">int</span>(<span class="red">1</span>)   <span class="green"># x will be 1</span>
+					y = <span class="blue">int</span>(<span class="red">2.8</span>) <span class="green"># y will be 2</span>
+					z = <span class="blue">int</span>(<span class="brown">"3"</span>) <span class="green"># z will be 3</span>
+						
+					x = <span class="blue">float</span>(<span class="red">1</span>)     <span class="green"># x will be 1.0</span>
+					y = <span class="blue">float</span>(<span class="red">2.8</span>)   <span class="green"># y will be 2.8</span>
+					z = <span class="blue">float</span>(<span class="brown">"3"</span>)   <span class="green"># z will be 3.0</span>
+					w = <span class="blue">float</span>(<span class="brown">"4.2"</span>) <span class="green"># w will be 4.2</span>
+
+					x = <span class="blue">str</span>(<span class="brown">"s1"</span>) <span class="green"># x will be 's1'</span>
+					y = <span class="blue">str</span>(<span class="red">2</span>)    <span class="green"># y will be '2'</span>
+					z = <span class="blue">str</span>(<span class="red">3.0</span>)  <span class="green"># z will be '3.0'</span>
+					</code>
 			</article>
 		</section>
 		<section class="main-section" id="strings">
 			<header>Python Strings</header>
+			<hr>
 			<article>
 				<h2>Strings</h2>
 				<p>Strings in python are surrounded by either single quotation marks, or double quotation marks.<br>
-					'hello' is the same as "hello".<br>
-					You can display a string literal with the print() function:</p>
+					<span class="crimson">'hello'</span> is the same as <span class="crimson">"hello"</span>.<br>
+					You can display a string literal with the <span class="crimson">print()</span> function:</p>
 				<h3>Assign String to a Variable</h3>
 				<p>Assigning a string to a variable is done with the variable name followed by an equal sign and the
 					string:</p>
 				<h3>Multiline Strings</h3>
-				<p>You can assign a multiline string to a variable by using three quotes:</p>
+				<p>You can assign a multiline string to a variable by using three quotes.
+					<span class="note"><strong>Note:</strong> in the result, the line breaks are inserted at the same position as in the code.</span>
+				</p>
+
 				<h3>Strings are Arrays</h3>
 				<p>Like many other popular programming languages, strings in Python are arrays of bytes representing
 					unicode characters.<br>
@@ -229,6 +315,7 @@
 		</section>
 		<section class="main-section" id="slicing-strings">
 			<header>Python - Slicing Strings</header>
+			<hr>
 			<article>
 				<h2>Slicing</h2>
 				<p>You can return a range of characters by using the slice syntax.<br>
@@ -243,6 +330,7 @@
 		</section>
 		<section class="main-section" id="booleans">
 			<header>Python Booleans</header>
+			<hr>
 			<article>
 				<p>Booleans represent one of two values: True or False.</p>
 				<h2>Boolean Values</h2>
@@ -266,6 +354,7 @@
 		</section>
 		<section class="main-section" id="operators">
 			<header>Python Operators</header>
+			<hr>
 			<article>
 				<h2>Python Operators</h2>
 				<p>Operators are used to perform operations on variables and values.<br>
@@ -301,6 +390,7 @@
 		</section>
 		<section class="main-section" id="lists">
 			<header>Python Lists</header>
+			<hr>
 			<article>
 				<code>mylist = ["apple", "banana", "cherry"]</code>
 				<h2>List</h2>
@@ -324,6 +414,7 @@
 		</section>
 		<section class="main-section" id="tuples">
 			<header>Python Tuples</header>
+			<hr>
 			<article>
 				<code>mytuple = ("apple", "banana", "cherry")</code>
 				<h2>Tuple</h2>
@@ -347,6 +438,7 @@
 		</section>
 		<section class="main-section" id="sets">
 			<header>Python Sets</header>
+			<hr>
 			<article>
 				<code>myset = {"apple", "banana", "cherry"}</code>
 				<h2>Set</h2>
@@ -373,6 +465,7 @@
 		</section>
 		<section class="main-section" id="dictionaries">
 			<header>Python Dictionaries</header>
+			<hr>
 			<article>
 				<h2>Dictionary</h2>
 				<p>Dictionaries are used to store data values in key:value pairs.<br>
@@ -398,6 +491,7 @@
 		</section>
 		<section class="main-section" id="reference">
 			<header>Reference</header>
+			<hr>
 			<article>
 				<ul>
 					<li>All the documentation in this page is taken from <a
