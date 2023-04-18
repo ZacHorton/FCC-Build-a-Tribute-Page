@@ -98,13 +98,23 @@ input[type=submit] {
     padding: 10px;
 }
 
+
+.feature {
+    width: 100%;
+    margin: 50px 50px;
+}
+
+.icon {
+    margin: 75px 50px;
+}
+
 #how-it-works {
     width: 50%;
     margin: auto;
 
 }
 
-#how-it-works>iframe {
+#how-it-works > iframe {
     max-width: 560px;
     width: 100%;
 }
