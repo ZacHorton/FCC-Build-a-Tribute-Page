@@ -6,9 +6,9 @@
     box-sizing: border-box;
 }
 
-.flex-container {
+.flex-header-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     list-style: none;
 }
 
@@ -87,6 +87,12 @@ input[type=submit] {
     cursor: pointer;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
 #features {
     width: 100%;
     margin: 50px auto;
@@ -94,19 +100,19 @@ input[type=submit] {
     font-size: 200%;
 }
 
-#features > h2 {
+/* #features > h2 {
     padding: 10px;
-}
+} */
 
 
-.feature {
+/* .feature {
     width: 100%;
     margin: 50px 50px;
-}
+} */
 
-.icon {
+/* .icon {
     margin: 75px 50px;
-}
+} */
 
 #how-it-works {
     width: 50%;
