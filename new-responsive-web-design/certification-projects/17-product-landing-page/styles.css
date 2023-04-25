@@ -100,27 +100,14 @@ input[type=submit] {
     font-size: 200%;
 }
 
-/* #features > h2 {
-    padding: 10px;
-} */
 
-
-/* .feature {
-    width: 100%;
-    margin: 50px 50px;
-} */
-
-/* .icon {
-    margin: 75px 50px;
-} */
-
-#how-it-works {
-    width: 50%;
-    margin: auto;
-
-}
-
-#how-it-works > iframe {
+ #how-it-works > iframe {
     max-width: 560px;
     width: 100%;
-}
+} 
+
+#how-it-works {
+    text-align: center;
+  }
+  
+
