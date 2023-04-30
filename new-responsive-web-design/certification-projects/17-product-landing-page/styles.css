@@ -29,6 +29,10 @@ a:link {
     color: cornflowerblue;
 }
 
+a:visited  {
+    color: cornflowerblue;
+}
+
 #header-img {
     height: 25px;
     width: 25px;
