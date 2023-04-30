@@ -53,7 +53,7 @@ span#digital {
 }
 
 #hero {
-    margin-top: 100px;
+    margin: 100px 5px;
     text-align: center;
 }
 
@@ -66,13 +66,22 @@ h1#shout {
     font-size: 750%;
 }
 
+#features>h2 {
+    margin-bottom: 75px;
+}
+
+.gif {
+    width: 100px;
+    height: 100px
+}
+
 input[type=email] {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-
+    font-size: 16px;
 }
 
 input[type=submit] {
@@ -90,24 +99,123 @@ input[type=submit] {
 .flex-container {
     display: flex;
     justify-content: center;
-    list-style: none;
+    margin-bottom: 25px;
+}
+
+.flex-container:last-child {
+    margin-bottom: 50px;
 }
 
 #features {
-    width: 100%;
-    margin: 50px auto;
-    text-align: center;
     font-size: 200%;
 }
 
+#features>h2 {
+    text-align: center;
+}
 
- #how-it-works > iframe {
-    max-width: 560px;
+div.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 10vw;
+}
+
+div.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 25vw;
+}
+
+#how-it-works>iframe {
+    max-width: 600px;
     width: 100%;
-} 
+    margin-bottom: 75px;
+}
 
 #how-it-works {
     text-align: center;
-  }
-  
+}
 
+#pricing {
+    display: flex;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.product>h3 {
+    background-color: #eee;
+    width: 100%;
+    padding: 20px;
+}
+
+.product>h4, .product>p {
+    padding: 10px;
+    width: 100%;
+}
+
+.product>button {
+    padding: 0 20px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 3px black solid;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 0;
+    margin: 15px 0;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: 400;
+}
+
+footer {
+    background-color: #eee;
+    font-size: 125%;
+    width: 100%;
+    padding: 25px;
+    margin-top: 75px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    cursor: pointer;
+}
+
+.footer>li {
+    padding: 5px 10px;
+}
+
+footer>p {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    div.desc {
+        width: 100vw;
+        text-align: center;
+    }
+
+    #pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
