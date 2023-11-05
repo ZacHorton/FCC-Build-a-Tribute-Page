@@ -28,22 +28,22 @@ const contacts = [
 
 function lookUpProfile(name, prop) {
   // Only change code below this line
-    let validName = false
-    let validProp = false
-    let value = ""
+    let validName = false;
+    let validProp = false;
+    let value = "";
     for (let i = 0; i < contacts.length; i++) {
         if (name === contacts[i].firstName) {
-            validName = true
+            validName = true;
             if (contacts[i].hasOwnProperty(prop)) {
-                validProp = true
-                value = contacts[i][prop]
+                validProp = true;
+                value = contacts[i][prop];
             }
         }
         
      }
-     if (validName === false) {return "No such contact"}
-     else if (validProp === false) {return "No such property"}
-     else return value
+     if (validName === false) {return "No such contact";}
+     else if (validProp === false) {return "No such property";}
+     else return value;
   // Only change code above this line
 }
 
