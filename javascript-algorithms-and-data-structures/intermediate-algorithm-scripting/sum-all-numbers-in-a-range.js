@@ -1,13 +1,7 @@
-function nonMutatingSort(arr) {
-  let newArr = arr.slice(0, arr.length);
-  let sortedArr = newArr.sort((a, b) => a > b ? 1 : a < b ? -1 : 0);
-  return sortedArr;
-  }
-
 function sumAll(arr) {
-  let sortedArr = nonMutatingSort(arr);
-  let sum = 0
-  for (let i = sortedArr[0]; i <= sortedArr[1]; i++) {sum += i;}
+  let sum = 0;
+  if (arr[0] > arr[1]) {for (let i = arr[1]; i <= arr[0]; i++) {sum += i;}}
+  else if (arr[1] > arr[0]) {for (let i = arr[0]; i <= arr[1]; i++) {sum += i;}}
   return sum;
 }
 
