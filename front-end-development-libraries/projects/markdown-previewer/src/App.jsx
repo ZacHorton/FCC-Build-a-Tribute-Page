@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { marked } from "marked";
-import DOMPurify from "dompurify";
 import { LiaFreeCodeCamp } from "react-icons/lia";
 import { FaExpandArrowsAlt, FaCompressAlt } from "react-icons/fa";
-
 import "./App.css";
+import Editor from "./components/Editor.jsx";
+import Preview from "./components/Preview.jsx";
 
-function App() {
+export default function App() {
   const [text, setText] = useState(
     `  # H1 heading
   ## H2 heading
@@ -43,48 +42,27 @@ function App() {
   ![Markdown symbol](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
   `
   );
+
+  function handleChange(event) {
+    setText(event.target.value);
+  }
+
   return (
     <>
-      <div class="editor-box">
-        <div class="editor-header">
-          <span>
-            <LiaFreeCodeCamp className="fcc-icons" />
-            <h4>Editor</h4>
-          </span>
-          <span>
-            <FaExpandArrowsAlt className="expand-icons" />
-            <FaCompressAlt className="compress-icons" />
-          </span>
-        </div>
-        <textarea
-          id="editor"
-          onChange={(event) => {
-            setText(event.target.value);
-          }}
-          value={text}
-        ></textarea>
-      </div>
-
-      <div class="preview-box">
-        <div class="preview-header">
-          <span>
-            <LiaFreeCodeCamp className="fcc-icons" />
-            <h4>Preview</h4>
-          </span>
-          <span>
-            <FaExpandArrowsAlt className="expand-icons" />
-            <FaCompressAlt className="compress-icons" />
-          </span>
-        </div>
-        <div
-          id="preview"
-          dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(marked(text, { breaks: true })),
-          }}
-        ></div>
-      </div>
+      <Editor
+        fCCIcon={<LiaFreeCodeCamp className="fcc-icon"/>}
+        expandIcon={<FaExpandArrowsAlt />}
+        compressIcon={<FaCompressAlt/>}
+        text={text}
+        handleChange={handleChange}
+      />
+      <Preview 
+        className="preview-component"
+        fCCIcon={<LiaFreeCodeCamp className="fcc-icon"/>}
+        expandIcon={<FaExpandArrowsAlt />}
+        compressIcon={<FaCompressAlt/>}
+        text={text}
+      />
     </>
   );
 }
-
-export default App;
