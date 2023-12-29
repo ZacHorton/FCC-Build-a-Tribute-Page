@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { LiaFreeCodeCamp } from "react-icons/lia";
-import { FaExpandArrowsAlt, FaCompressAlt } from "react-icons/fa";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 import "./App.css";
-import Editor from "./components/Editor.jsx";
-import Preview from "./components/Preview.jsx";
+import EditorExpanded from "./components/EditorExpanded.jsx";
+import PreviewExpanded from "./components/PreviewExpanded.jsx";
+import DefaultState from "./components/DefaultState.jsx";
 
 export default function App() {
   const [text, setText] = useState(
@@ -47,22 +48,44 @@ export default function App() {
     setText(event.target.value);
   }
 
+  let display;
+  const [editorExpanded, setEditor] = useState(false);
+  const [previewExpanded, setPreview] = useState(false);
+  if (editorExpanded && !previewExpanded) {
+    display = <EditorExpanded 
+      text={text}
+      handleChange={handleChange}
+      changeEditor={changeEditor}
+    />
+  }
+  else if (previewExpanded && !editorExpanded) {
+    display = <PreviewExpanded 
+      text={text}
+      changePreview={changePreview}
+      marked={marked}
+      DOMPurify={DOMPurify}
+    />
+  }
+  else {
+    display = <DefaultState
+      text={text}
+      handleChange={handleChange}
+      changeEditor={changeEditor}
+      changePreview={changePreview}
+      marked={marked}
+      DOMPurify={DOMPurify}
+    />
+  }
+
+  function changeEditor() {
+    setEditor(!editorExpanded);
+  }
+  function changePreview() {
+    setPreview(!previewExpanded);
+  }
   return (
     <>
-      <Editor
-        fCCIcon={<LiaFreeCodeCamp className="fcc-icon"/>}
-        expandIcon={<FaExpandArrowsAlt />}
-        compressIcon={<FaCompressAlt/>}
-        text={text}
-        handleChange={handleChange}
-      />
-      <Preview 
-        className="preview-component"
-        fCCIcon={<LiaFreeCodeCamp className="fcc-icon"/>}
-        expandIcon={<FaExpandArrowsAlt />}
-        compressIcon={<FaCompressAlt/>}
-        text={text}
-      />
+    {display}
     </>
   );
 }

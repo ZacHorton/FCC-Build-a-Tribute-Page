@@ -16,7 +16,11 @@ span > h4 {
 .fcc-icon {
     margin: auto auto auto 5px;
     font-size: 125%;
-  }
+}
+
+.no-icon {
+    display: none;
+}
 
 pre {
     background-color: black;

@@ -1,16 +1,17 @@
-import  "./Editor.css";
+import { LiaFreeCodeCamp } from "react-icons/lia";
+import { FaCompressAlt } from "react-icons/fa";
+import "./EditorExpanded.css";
 
-export default function Editor({ fCCIcon, expandIcon, compressIcon, text, handleChange }) {
+export default function EditorExpanded({ changeEditor, text, handleChange }) {
   return (
     <div className="editor-box">
       <div className="editor-header">
         <span className="span-header">
-          {fCCIcon}
+          <LiaFreeCodeCamp className="fcc-icon"/>
           <h4>Editor</h4>
         </span>
         <span className="span-header">
-          <button>{expandIcon}</button>
-          <button>{compressIcon}</button>
+          <button onClick={changeEditor}><FaCompressAlt /></button>
         </span>
       </div>
       <textarea id="editor" value={text} onChange={handleChange}></textarea>

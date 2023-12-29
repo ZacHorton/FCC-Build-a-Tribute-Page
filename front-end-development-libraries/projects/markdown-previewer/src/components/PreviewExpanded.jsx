@@ -1,18 +1,17 @@
-import  "./Preview.css";
-import { marked } from "marked";
-import DOMPurify from "dompurify";
+import { LiaFreeCodeCamp } from "react-icons/lia";
+import { FaCompressAlt } from "react-icons/fa";
+import  "./PreviewExpanded.css";
 
-export default function Preview({ fCCIcon, expandIcon, compressIcon, text}) {
+export default function PreviewExpanded({changePreview, text, marked, DOMPurify}) {
   return (
     <div className="preview-box">
       <div className="preview-header">
         <span className="span-header">
-          {fCCIcon}
+          <LiaFreeCodeCamp className="fcc-icon"/>
           <h4>Preview</h4>
         </span>
         <span className="span-header">
-          <button>{expandIcon}</button>
-          <button>{compressIcon}</button>
+          <button onClick={changePreview}><FaCompressAlt /></button>
         </span>
       </div>
       <div
