@@ -2,12 +2,12 @@ import { useState } from "react";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 import "./App.css";
-import EditorExpanded from "./components/EditorExpanded.jsx";
-import PreviewExpanded from "./components/PreviewExpanded.jsx";
-import DefaultState from "./components/DefaultState.jsx";
+import Toolbar from "./components/Toolbar.jsx";
+import Editor from "./components/Editor.jsx";
+import Previewer from "./components/Previewer.jsx";
 
 export default function App() {
-  const [text, setText] = useState(
+  const [editorText, setEditorText] = useState(
     `  # H1 heading
   ## H2 heading
   ### H3 heading
@@ -44,48 +44,73 @@ export default function App() {
   `
   );
 
-  function handleChange(event) {
-    setText(event.target.value);
+  function handleEditorChange(event) {
+    setEditorText(event.target.value);
   }
 
-  let display;
-  const [editorExpanded, setEditor] = useState(false);
-  const [previewExpanded, setPreview] = useState(false);
-  if (editorExpanded && !previewExpanded) {
-    display = <EditorExpanded 
-      text={text}
-      handleChange={handleChange}
-      changeEditor={changeEditor}
-    />
-  }
-  else if (previewExpanded && !editorExpanded) {
-    display = <PreviewExpanded 
-      text={text}
-      changePreview={changePreview}
-      marked={marked}
-      DOMPurify={DOMPurify}
-    />
-  }
-  else {
-    display = <DefaultState
-      text={text}
-      handleChange={handleChange}
-      changeEditor={changeEditor}
-      changePreview={changePreview}
-      marked={marked}
-      DOMPurify={DOMPurify}
-    />
-  }
+  const [editorButtonClicked, setEditorClicked] = useState(false);
+  const [previewerButtonClicked, setPreviewerClicked] = useState(false);
 
-  function changeEditor() {
-    setEditor(!editorExpanded);
-  }
-  function changePreview() {
-    setPreview(!previewExpanded);
-  }
+  const handleEditorButtonClick = () => {
+    setEditorClicked((editorButtonClicked) => !editorButtonClicked);
+  };
+
+  const handlePreviewerButtonClick = () => {
+    setPreviewerClicked((previewerButtonClicked) => !previewerButtonClicked);
+  };
+
   return (
     <>
-    {display}
+      {editorButtonClicked ? (
+        <>
+          <Toolbar
+            heading="Editor"
+            editorButtonClicked={editorButtonClicked}
+            onEditorClick={handleEditorButtonClick}
+          />
+          <Editor
+            editorText={editorText}
+            editorButtonClicked={editorButtonClicked}
+            handleEditorChange={handleEditorChange}
+          />
+        </>
+      ) : previewerButtonClicked ? (
+        <>
+          <Toolbar
+            heading="Previewer"
+            previewerButtonClicked={previewerButtonClicked}
+            onPreviewerClick={handlePreviewerButtonClick}
+          />
+          <Previewer
+            editorText={editorText}
+            marked={marked}
+            DOMPurify={DOMPurify}
+          />
+        </>
+      ) : (
+        <>
+          <Toolbar
+            heading="Editor"
+            editorButtonClicked={editorButtonClicked}
+            onEditorClick={handleEditorButtonClick}
+          />
+          <Editor
+            editorText={editorText}
+            editorButtonClicked={editorButtonClicked}
+            handleEditorChange={handleEditorChange}
+          />
+          <Toolbar
+            heading="Previewer"
+            previewerButtonClicked={previewerButtonClicked}
+            onPreviewerClick={handlePreviewerButtonClick}
+          />
+          <Previewer
+            editorText={editorText}
+            marked={marked}
+            DOMPurify={DOMPurify}
+          />
+        </>
+      )}
     </>
   );
 }

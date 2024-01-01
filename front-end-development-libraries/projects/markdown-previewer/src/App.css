@@ -1,25 +1,121 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 
-span.span-header {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Toolbar */
+.toolbar-flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+    border: 1px solid black;
+    z-index: 1;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+.toolbar-flex-span-left {
     display: flex;
     justify-content: space-around;
     margin: 2px;
     padding: 2px;
 }
 
-span > h4 {
+.toolbar-fcc-icon {
+    margin: auto auto auto 5px;
+    font-size: 150%;
+}
+
+.toolbar-h4 {
     margin: auto auto auto 5px;
     font-family: Russo One;
     font-weight: normal;
+    font-size: larger;
 }
 
-.fcc-icon {
-    margin: auto auto auto 5px;
+.toolbar-expand-button, .toolbar-compress-button {
+    background: transparent;
+    border: none;
+}
+
+.toolbar-expand-icon, .toolbar-compress-icon {
+    margin: auto 5px auto auto;
     font-size: 125%;
+    vertical-align: middle;
 }
 
-.no-icon {
-    display: none;
+/* Editor */
+.editor-box-expanded {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    height: 95vh;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+#editor-expanded {
+    width: 100%;
+    background-color:lightgray;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    resize: none;
+    height: inherit;
+}
+
+.editor-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+#editor {
+    width: 100%;
+    min-height: 200px;
+    background-color:lightgray;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    outline: none; 
+    height: inherit;
+}
+
+/* Previewer */
+#preview-expanded {
+    width: inherit;
+    background-color:lightgray;
+    border: 1px solid black;
+    border-top: none;
+    resize: none;
+    outline: none;
+    height: inherit;
+    width: 100%;
+}
+
+.previewer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 1px 1px 10px 2px #3a5f5f;
+}
+
+#preview {
+    width: 100%;
+    background-color:lightgray;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    outline: none; 
 }
 
 pre {
