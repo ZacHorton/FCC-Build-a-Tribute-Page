@@ -8,40 +8,40 @@ import Previewer from "./components/Previewer.jsx";
 
 export default function App() {
   const [editorText, setEditorText] = useState(
-    `  # H1 heading
-  ## H2 heading
-  ### H3 heading
-  **Bold text**
+`# H1 heading
+## H2 heading
+### H3 heading
+**Bold text**
 
-  *Italicized text*
-  > This is a blockquote
+*Italicized text*
+> This is a blockquote
 
-  Ordered list:
-  1. First item
-  2. Second item
-  3. Third item
+Ordered list:
+1. First item
+2. Second item
+3. Third item
 
-  Unordered list:
-  - First item
-  - Second item
-  - Third item
+Unordered list:
+- First item
+- Second item
+- Third item
 
-  Inline code:
-  \`<div>This is a div tag<div>\`
+Inline code:
+\`<div>This is a div tag<div>\`
 
-  Fenced code block:
-  \`\`\`
-  function sum(a, b) {
-    return a + b;
-  }
-  \`\`\`
+Fenced code block:
+\`\`\`
+function sum(a, b) {
+  return a + b;
+}
+\`\`\`
 
-  Build a Markdown Previewer:
-  [Link](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer)
-  
-  Markdown symbol:
-  ![Markdown symbol](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
-  `
+Build a Markdown Previewer:
+[Link](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer)
+
+Markdown symbol:
+![Markdown symbol](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+`
   );
 
   function handleEditorChange(event) {
@@ -62,33 +62,34 @@ export default function App() {
   return (
     <>
       {editorButtonClicked ? (
-        <>
+        <div className="app-container">
           <Toolbar
             heading="Editor"
-            editorButtonClicked={editorButtonClicked}
+            editorButtonClicked={true}
             onEditorClick={handleEditorButtonClick}
           />
           <Editor
             editorText={editorText}
-            editorButtonClicked={editorButtonClicked}
+            editorButtonClicked={true}
             handleEditorChange={handleEditorChange}
           />
-        </>
+        </div>
       ) : previewerButtonClicked ? (
-        <>
+        <div className="app-container">
           <Toolbar
             heading="Previewer"
-            previewerButtonClicked={previewerButtonClicked}
+            previewerButtonClicked={true}
             onPreviewerClick={handlePreviewerButtonClick}
           />
           <Previewer
+            previewerButtonClicked={true}
             editorText={editorText}
             marked={marked}
             DOMPurify={DOMPurify}
           />
-        </>
+        </div>
       ) : (
-        <>
+        <div className="app-container">
           <Toolbar
             heading="Editor"
             editorButtonClicked={editorButtonClicked}
@@ -105,11 +106,12 @@ export default function App() {
             onPreviewerClick={handlePreviewerButtonClick}
           />
           <Previewer
+            previewerButtonClicked={previewerButtonClicked}
             editorText={editorText}
             marked={marked}
             DOMPurify={DOMPurify}
           />
-        </>
+        </div>
       )}
     </>
   );

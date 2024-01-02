@@ -15,7 +15,7 @@ export default function NewToolbar({
           <LiaFreeCodeCamp className="toolbar-fcc-icon" />
           <h4 className="toolbar-h4">Editor</h4>
         </span>
-        <button onClick={onEditorClick}>
+        <button className="toolbar-button" onClick={onEditorClick}>
           {editorButtonClicked ? (
             <FaCompressAlt className="toolbar-compress-icon" />
           ) : (
@@ -31,7 +31,7 @@ export default function NewToolbar({
           <LiaFreeCodeCamp className="toolbar-fcc-icon" />
           <h4 className="toolbar-h4">Previewer</h4>
         </span>
-        <button onClick={onPreviewerClick}>
+        <button className="toolbar-button" onClick={onPreviewerClick}>
           {previewerButtonClicked ? (
             <FaCompressAlt className="toolbar-compress-icon" />
           ) : (

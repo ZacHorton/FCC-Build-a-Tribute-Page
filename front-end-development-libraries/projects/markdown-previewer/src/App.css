@@ -6,15 +6,25 @@
     box-sizing: border-box;
 }
 
-/* Toolbar */
+body {
+    background-color: #8d99ae;
+}
+
+.app-container {
+    margin: auto;
+    max-width: 800px;
+}
+
+/* Toolbar Component */
 .toolbar-flex-container {
+    background-color: #2b2d42;
     display: flex;
     justify-content: space-between;
-    margin: auto;
+    margin: 15px auto auto auto;
     width: 100%;
     border: 1px solid black;
     z-index: 1;
-    box-shadow: 1px 1px 10px 2px #3a5f5f;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
 }
 
 .toolbar-flex-span-left {
@@ -27,6 +37,7 @@
 .toolbar-fcc-icon {
     margin: auto auto auto 5px;
     font-size: 150%;
+    color: white;
 }
 
 .toolbar-h4 {
@@ -34,9 +45,10 @@
     font-family: Russo One;
     font-weight: normal;
     font-size: larger;
+    color: white;
 }
 
-.toolbar-expand-button, .toolbar-compress-button {
+.toolbar-button {
     background: transparent;
     border: none;
 }
@@ -45,90 +57,40 @@
     margin: auto 5px auto auto;
     font-size: 125%;
     vertical-align: middle;
+    color: white;
 }
 
-/* Editor */
-.editor-box-expanded {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 600px;
-    height: 95vh;
-    box-shadow: 1px 1px 10px 2px #3a5f5f;
+/* Editor Component */
+#editor, #editor-expanded {
+    background-color: #edf2f4;
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    padding: 5px 7px;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
 }
 
 #editor-expanded {
-    width: 100%;
-    background-color:lightgray;
+    min-height: 90vh;   
+}
+
+/* Previewer Component */
+#preview, #preview-expanded   {
+    background-color:#edf2f4;
     border: 1px solid black;
     border-top: none;
     resize: vertical;
-    resize: none;
-    height: inherit;
-}
-
-.editor-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 600px;
-    box-shadow: 1px 1px 10px 2px #3a5f5f;
-}
-
-#editor {
-    width: 100%;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
     min-height: 200px;
-    background-color:lightgray;
-    border: 1px solid black;
-    border-top: none;
-    resize: vertical;
-    outline: none; 
-    height: inherit;
+    padding: 5px 7px;
 }
 
-/* Previewer */
+#preview-expanded > h1, #preview > h1 {
+    margin-top: 0;
+}
+
 #preview-expanded {
-    width: inherit;
-    background-color:lightgray;
-    border: 1px solid black;
-    border-top: none;
-    resize: none;
-    outline: none;
-    height: inherit;
-    width: 100%;
-}
-
-.previewer-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 20px auto;
-    box-shadow: 1px 1px 10px 2px #3a5f5f;
-}
-
-#preview {
-    width: 100%;
-    background-color:lightgray;
-    border: 1px solid black;
-    border-top: none;
-    resize: vertical;
-    outline: none; 
-}
-
-pre {
-    background-color: black;
-    display: inline-block;
-    margin: 0px auto;
-}
-
-code {
-    color: white;
-    background-color: black;
-}
-
-p {
-    margin-bottom: 0px;
+    min-height: 90vh;
 }
