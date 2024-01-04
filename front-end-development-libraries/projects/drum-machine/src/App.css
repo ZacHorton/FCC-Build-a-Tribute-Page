@@ -1,7 +1,14 @@
-.drum-pad {
+#drum-machine {
+    outline: none;
+}
+
+#display, .drum-pad {
     text-align: center;
-    cursor: pointer;
     padding: 25px;
     margin: 10px;
+}
+
+.drum-pad {
+    cursor: pointer;
     border: 1px solid black;
 }
