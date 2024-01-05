@@ -1,10 +1,16 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-export default function DrumPad({ drumID, audioID, audioSrc, keyPressed }) {
+export default function DrumPad({
+  drumID,
+  audioID,
+  audioSrc,
+  keyPressed,
+  keyValue,
+}) {
   const audioRef = useRef(null);
 
-  if (keyPressed == audioID) {
-    console.log(keyPressed);
+  if (keyPressed && keyValue.toUpperCase() === audioID) {
+    audioRef.current.play();
   }
 
   const handleClick = () => {
