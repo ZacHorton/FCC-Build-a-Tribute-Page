@@ -1,0 +1,145 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div#root {
+  background-color: #c2c2d6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 27%;
+  height: 31%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculator {
+  display: grid;
+  grid-template-areas:
+    "display  display display display"
+    "clear    clear   divide  multiply"
+    "seven    eight   nine    subtract"
+    "four     five    six     add"
+    "one      two     three   equals"
+    "zero     zero    decimal equals";
+  width: 100%;
+  height: 100%;
+}
+
+#display {
+  grid-area: display;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 5px 5px 0;
+  font-size: larger;
+}
+
+button {
+  color: white;
+}
+
+#clear {
+  grid-area: clear;
+  background-color: red;
+}
+
+#divide {
+  grid-area: divide;
+  background-color: darkgrey;
+}
+
+#multiply {
+  grid-area: multiply;
+  background-color: darkgrey;
+}
+
+#seven {
+  grid-area: seven;
+  background-color: grey;
+}
+
+#eight {
+  grid-area: eight;
+  background-color: grey;
+}
+
+#nine {
+  grid-area: nine;
+  background-color: grey;
+}
+
+#subtract {
+  grid-area: subtract;
+  background-color: darkgrey;
+}
+
+#four {
+  grid-area: four;
+  background-color: grey;
+}
+
+#five {
+  grid-area: five;
+  background-color: grey;
+}
+
+#six {
+  grid-area: six;
+  background-color: grey;
+}
+
+#add {
+  grid-area: add;
+  background-color: darkgrey;
+}
+
+#one {
+  grid-area: one;
+  background-color: grey;
+}
+
+#two {
+  grid-area: two;
+  background-color: grey;
+}
+
+#three {
+  grid-area: three;
+  background-color: grey;
+}
+
+#equals {
+  grid-area: equals;
+  background-color: blue;
+}
+
+#zero {
+  grid-area: zero;
+  background-color: grey;
+}
+
+#decimal {
+  grid-area: decimal;
+  background-color: grey;
+}
+
+#signature {
+  font-family: Share Tech Mono, sans;
+  margin-top: 15px;
+}
