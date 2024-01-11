@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
 *,
 *::before,
 *::after {
@@ -5,22 +7,75 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-overflow: hidden
+
+body, button.drum-pad {
+    font-family: Russo One;
+  }
+
+div#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8d8d8d;
 }
 
 #drum-machine {
-    outline: none;
-    min-height: 100vh;
+    width: 100%;
+    min-height: 45%;
+    border: 7px solid orange;
+    background-color: rgba(211, 211, 211, 0.65);
+    display: flex;
 }
 
-#display, .drum-pad {
-    text-align: center;
-    padding: 25px;
-    margin: 10px;
+/* Styles for screens with a width between 1024px and 1999px */
+@media only screen and (min-width: 1024px) and (max-width: 1999px) {
+    #drum-machine {
+        width: 90%;
+    }
 }
 
-.drum-pad {
+/* Styles for screens with a width of 2000px and above */
+@media only screen and (min-width: 2000px) {
+    #drum-machine {
+        width: 45%;
+    }
+}
+
+div.drum-pads {
+    background-color: rgba(211, 211, 211, 0.65);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+}
+
+button.drum-pad {
     cursor: pointer;
-    border: 1px solid black;
+    background-color: #8d8d8d;
+    font-size: x-large;
+    min-width: 160px;
+    min-height: 130px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: black 3px 3px 5px;
+}
+
+.drum-pad:active {
+    transform: translate(2px, 2px);
+    background-color: orange;
+  }
+
+#display {
+    background-color:#8d8d8d;
+    min-width: 300px;
+    min-height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    box-shadow: black 3px 3px 5px;
 }

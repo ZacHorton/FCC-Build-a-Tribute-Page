@@ -1,31 +1,20 @@
-import { useEffect, useRef } from "react";
 
-export default function DrumPad({
-  drumID,
-  audioID,
-  audioSrc,
-  keyPressed,
-  keyValue,
-}) {
-  const audioRef = useRef(null);
-
-  if (keyPressed && keyValue.toUpperCase() === audioID) {
-    audioRef.current.play();
-  }
-
-  const handleClick = () => {
-    audioRef.current.play();
+const Drum = ({ audioClip }) => {
+  const playSound = (clip) => {
+    document.getElementById(clip.keyTrigger).play().catch(console.error);
+    document.getElementById("display").innerText = clip.description;
   };
 
   return (
-    <div className="drum-pad" id={drumID} onClick={handleClick}>
-      {audioID}
-      <audio
-        ref={audioRef}
-        className="clip"
-        id={audioID}
-        src={audioSrc}
-      ></audio>
-    </div>
+    <button
+      className="drum-pad"
+      id={`drum-${audioClip.keyTrigger}`}
+      onClick={() => playSound(audioClip)}
+    >
+      <audio src={audioClip.url} id={audioClip.keyTrigger} className="clip" />
+      {audioClip.keyTrigger}
+    </button>
   );
-}
+};
+
+export default Drum;
