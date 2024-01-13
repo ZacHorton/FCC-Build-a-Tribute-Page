@@ -18,8 +18,8 @@ div#root {
 }
 
 #container {
-  width: 27%;
-  height: 31%;
+  width: 25%;
+  height: 30%;
   border: 3px solid black;
   display: flex;
   justify-content: center;
@@ -29,25 +29,38 @@ div#root {
 #calculator {
   display: grid;
   grid-template-areas:
-    "display  display display display"
-    "clear    clear   divide  multiply"
-    "seven    eight   nine    subtract"
-    "four     five    six     add"
-    "one      two     three   equals"
-    "zero     zero    decimal equals";
+    "display-bottom display-bottom  display-bottom  display-bottom"
+    "clear          clear           divide          multiply"
+    "seven          eight           nine            subtract"
+    "four           five            six             add"
+    "one            two             three           equals"
+    "zero           zero            decimal         equals";
   width: 100%;
   height: 100%;
 }
 
-#display {
-  grid-area: display;
+/* #display-top, #display  {
   background-color: black;
-  color: white;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   padding: 0 5px 5px 0;
-  font-size: larger;
+  /* font-size: larger; */
+
+
+/* #display-top {
+  grid-area: display-top;
+  color: orange;
+} */
+
+#display {
+  grid-area: display-bottom;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 5px 5px 0;
 }
 
 button {
@@ -142,4 +155,12 @@ button {
 #signature {
   font-family: Share Tech Mono, sans;
   margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
 }
