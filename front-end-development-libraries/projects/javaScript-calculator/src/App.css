@@ -18,7 +18,7 @@ div#root {
 }
 
 #container {
-  width: 25%;
+  width: 15%;
   height: 30%;
   border: 3px solid black;
   display: flex;
@@ -26,35 +26,27 @@ div#root {
   align-items: center;
 }
 
+@media only screen and (max-width: 850px) {
+  #container {
+    width: 50%;
+  }
+}
+
 #calculator {
   display: grid;
   grid-template-areas:
-    "display-bottom display-bottom  display-bottom  display-bottom"
-    "clear          clear           divide          multiply"
-    "seven          eight           nine            subtract"
-    "four           five            six             add"
-    "one            two             three           equals"
-    "zero           zero            decimal         equals";
+    "display  display display display"
+    "clear    clear   divide  multiply"
+    "seven    eight   nine    subtract"
+    "four     five    six     add"
+    "one      two     three   equals"
+    "zero     zero    decimal equals";
   width: 100%;
   height: 100%;
 }
 
-/* #display-top, #display  {
-  background-color: black;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0 5px 5px 0;
-  /* font-size: larger; */
-
-
-/* #display-top {
-  grid-area: display-top;
-  color: orange;
-} */
-
 #display {
-  grid-area: display-bottom;
+  grid-area: display;
   color: white;
   background-color: black;
   display: flex;

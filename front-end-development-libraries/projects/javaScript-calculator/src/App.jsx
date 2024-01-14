@@ -18,26 +18,31 @@ function App() {
       case "3":
       case "2":
       case "1":
-      case "/":
-      case "*":
-      case "-":
+      case "-": 
       case "+":
-        setDisplay(display + event.target.innerText);
-        break;
-      case "=":
-        console.log(display);
-        setDisplay(eval(display));
-        break;
-      case "0":
-        if (display.charAt(0) != "") {
+      case "*":
+      case "/":
+        const opsRegex = /[\+\-\/\*][\+\/\*]/;
+        const opsReplaceRegex = /[\+\-\/\*][\+\-\/\*]/;
+        if (opsRegex.test(display + event.target.innerText)) {
+          setDisplay(display.replace(opsReplaceRegex, event.target.innerText));
+        }
+        else {
           setDisplay(display + event.target.innerText);
         }
+      break;
+      case "0":
+        if (display.charAt(0) != "") {
+          setDisplay(display + "0");
+        }
+        break;
+      case "=":
+        setDisplay(eval(display));
         break;
       case ".":
-        // Prevents consecutive decimals
-        const regex = /\.\./;
-        if (!regex.test(display + ".")) {
-          setDisplay(display + event.target.innerText);
+        const decimalRegex = /\.\.|\.[0-9]\./;
+        if (!decimalRegex.test(display + ".")) {
+          setDisplay(display + ".");
         }
         break;
     }
