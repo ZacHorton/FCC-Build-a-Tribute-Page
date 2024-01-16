@@ -8,6 +8,7 @@ function App() {
   const [timer, setTimer] = useState();
   const [timerStarted, setTimerStarted] = useState(false);
   const intervalId = useRef(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const minutes = Math.floor(timeInSeconds / 60);
@@ -15,6 +16,9 @@ function App() {
     setTimer(
       `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
     );
+    if (timeInSeconds === 0) {
+      audioRef.current.play();
+    }
   }, [timeInSeconds]);
 
   useEffect(() => {
@@ -53,6 +57,8 @@ function App() {
       setSessionLength(25);
       setTimeInSeconds(1500);
       setTimerStarted(false);
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
   };
 
@@ -88,6 +94,11 @@ function App() {
       <div id="timer-container">
         <div id="timer-label">Session</div>
         <div id="time-left">{timer}</div>
+        <audio
+          ref={audioRef}
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav"
+          id="beep"
+        />
       </div>
       <div>
         <button id="start_stop" onClick={handleClick}>
