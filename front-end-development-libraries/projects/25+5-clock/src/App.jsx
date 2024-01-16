@@ -1,30 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
-  const [timer, setTimer] = useState(sessionLength);
+  const [timeInSeconds, setTimeInSeconds] = useState(1500);
+  const [timer, setTimer] = useState();
+  const [timerStarted, setTimerStarted] = useState(false);
+  const intervalId = useRef(null);
+
+  useEffect(() => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    setTimer(
+      `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    );
+  }, [timeInSeconds]);
+
+  useEffect(() => {
+    if (timerStarted) {
+      intervalId.current = setInterval(() => {
+        setTimeInSeconds((prevTimeInSeconds) => prevTimeInSeconds - 1);
+      }, 1000);
+    } else {
+      clearInterval(intervalId.current);
+    }
+  }, [timerStarted]);
 
   const handleClick = (event) => {
     if (event.currentTarget.id === "break-decrement") {
-      setBreakLength(breakLength - 1);
+      if (breakLength - 1 > 0) {
+        setBreakLength(breakLength - 1);
+      }
     } else if (event.currentTarget.id === "break-increment") {
-      setBreakLength(breakLength + 1);
+      if (breakLength + 1 <= 60) {
+        setBreakLength(breakLength + 1);
+      }
     } else if (event.currentTarget.id === "session-decrement") {
-      setSessionLength(sessionLength - 1);
+      if (sessionLength - 1 > 0) {
+        setSessionLength(sessionLength - 1);
+        setTimeInSeconds(timeInSeconds - 60);
+      }
     } else if (event.currentTarget.id === "session-increment") {
-      setSessionLength(sessionLength + 1);
+      if (sessionLength + 1 <= 60) {
+        setSessionLength(sessionLength + 1);
+        setTimeInSeconds(timeInSeconds + 60);
+      }
+    } else if (event.currentTarget.id === "start_stop") {
+      setTimerStarted((prevTimerStarted) => !prevTimerStarted);
     } else if (event.currentTarget.id === "reset") {
       setBreakLength(5);
       setSessionLength(25);
+      setTimeInSeconds(1500);
+      setTimerStarted(false);
     }
   };
 
   return (
     <div id="app-container">
       <h1>25 + 5 Clock</h1>
-
       <div id="break-session-flex">
         <div id="break-container">
           <div id="break-label">Break Length</div>
@@ -38,7 +72,6 @@ function App() {
             </button>
           </div>
         </div>
-
         <div id="session-container">
           <div id="session-label">Session Length</div>
           <div id="session-data">
@@ -52,12 +85,10 @@ function App() {
           </div>
         </div>
       </div>
-
       <div id="timer-container">
         <div id="timer-label">Session</div>
         <div id="time-left">{timer}</div>
       </div>
-
       <div>
         <button id="start_stop" onClick={handleClick}>
           <i className="fa fa-play fa-2x" />
@@ -67,9 +98,11 @@ function App() {
           <i className="fa fa-refresh fa-2x" />
         </button>
       </div>
-
       <p>
-        Coded by <a href="https://github.com/ZacHorton" target="_blank">Zac Horton</a>
+        Coded by{" "}
+        <a href="https://github.com/ZacHorton" target="_blank">
+          Zac Horton
+        </a>
       </p>
     </div>
   );
