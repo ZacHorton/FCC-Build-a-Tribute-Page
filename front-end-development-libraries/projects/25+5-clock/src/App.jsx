@@ -4,32 +4,47 @@ import "./App.css";
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
+
+  const [timerLabel, setTimerLabel] = useState("Session");
   const [timeInSeconds, setTimeInSeconds] = useState(1500);
-  const [timer, setTimer] = useState();
-  const [timerStarted, setTimerStarted] = useState(false);
-  const intervalId = useRef(null);
+
+  const minutes = Math.floor(timeInSeconds / 60);
+  const seconds = timeInSeconds % 60;
+  const format = `${String(minutes).padStart(2, "0")}:${String(
+    seconds
+  ).padStart(2, "0")}`;
+  const [timeLeft, setTimeLeft] = useState(format);
+
+  const [startStop, setStartStop] = useState(false);
+  const startStopClass = startStop ? "start" : "stop";
+
+  const [breakStarted, setBreakStarted] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-    setTimer(
-      `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
-    );
-    if (timeInSeconds === 0) {
+    setTimeLeft(format);
+    if (startStop && timeInSeconds === 0) {
       audioRef.current.play();
-    }
-  }, [timeInSeconds]);
-
-  useEffect(() => {
-    if (timerStarted) {
-      intervalId.current = setInterval(() => {
+      setTimeout(() => {
+        setBreakStarted((prevBreakStarted) => !prevBreakStarted);
+      }, 3500);
+    } else if (startStop && timeInSeconds != 0) {
+      let timeout = setTimeout(() => {
         setTimeInSeconds((prevTimeInSeconds) => prevTimeInSeconds - 1);
       }, 1000);
-    } else {
-      clearInterval(intervalId.current);
+      return () => clearTimeout(timeout);
     }
-  }, [timerStarted]);
+  }, [startStop, timeInSeconds]);
+
+  useEffect(() => {
+    if (breakStarted) {
+      setTimerLabel("Break");
+      setTimeInSeconds(breakLength * 60);
+    } else {
+      setTimerLabel("Session");
+      setTimeInSeconds(sessionLength * 60);
+    }
+  }, [breakStarted]);
 
   const handleClick = (event) => {
     if (event.currentTarget.id === "break-decrement") {
@@ -43,20 +58,25 @@ function App() {
     } else if (event.currentTarget.id === "session-decrement") {
       if (sessionLength - 1 > 0) {
         setSessionLength(sessionLength - 1);
-        setTimeInSeconds(timeInSeconds - 60);
+        if (timerLabel === "Session") {
+          setTimeInSeconds(timeInSeconds - 60);
+        }
       }
     } else if (event.currentTarget.id === "session-increment") {
       if (sessionLength + 1 <= 60) {
         setSessionLength(sessionLength + 1);
-        setTimeInSeconds(timeInSeconds + 60);
+        if (timerLabel === "Session") {
+          setTimeInSeconds(timeInSeconds + 60);
+        }
       }
     } else if (event.currentTarget.id === "start_stop") {
-      setTimerStarted((prevTimerStarted) => !prevTimerStarted);
+      setStartStop((prevStartStop) => !prevStartStop);
     } else if (event.currentTarget.id === "reset") {
+      setStartStop(false);
+      setBreakStarted(false);
       setBreakLength(5);
       setSessionLength(25);
       setTimeInSeconds(1500);
-      setTimerStarted(false);
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
@@ -92,8 +112,8 @@ function App() {
         </div>
       </div>
       <div id="timer-container">
-        <div id="timer-label">Session</div>
-        <div id="time-left">{timer}</div>
+        <div id="timer-label">{timerLabel}</div>
+        <div id="time-left">{timeLeft}</div>
         <audio
           ref={audioRef}
           src="https://cdn.freecodecamp.org/testable-projects-fcc/audio/BeepSound.wav"
@@ -101,7 +121,11 @@ function App() {
         />
       </div>
       <div>
-        <button id="start_stop" onClick={handleClick}>
+        <button
+          className={startStopClass}
+          id="start_stop"
+          onClick={handleClick}
+        >
           <i className="fa fa-play fa-2x" />
           <i className="fa fa-pause fa-2x" />
         </button>

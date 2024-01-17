@@ -55,16 +55,24 @@
   font-size: 80px;
 }
 
+.start {
+color: green;
+}
+
+.stop {
+  color: black;
+}
+
 button {
   background: transparent;
   border: none;
   padding: 5px;
 }
 
-button:active {
+/* button:active {
   background-color: red;
   color: white;
-}
+} */
 
 i {
   margin: 0 3px;
