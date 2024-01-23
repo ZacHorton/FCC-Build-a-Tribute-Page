@@ -24,8 +24,6 @@ div.homeContainer {
 
   a,
   a:visited {
-    text-decoration: none;
-    color: black;
     display: block;
     font-size: larger;
   }

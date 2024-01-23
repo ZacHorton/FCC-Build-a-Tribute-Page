@@ -16,11 +16,11 @@ export function Home() {
         </ol>
         <a href="https://www.freecodecamp.org/certification/zachorton/javascript-algorithms-and-data-structures">JavaScript Algorithms and Data Structures Developer Certification</a>
         <ol>
-          <li><Link to="/">Palindrome Checker</Link></li>
-          <li><Link to="/">Roman Numeral Converter</Link></li>
-          <li><Link to="/">Caesars Cipher</Link></li>
-          <li><Link to="/">Telephone Number Validator</Link></li>
-          <li><Link to="/">Cash Register</Link></li>
+          <li><a>Palindrome Checker</a></li>
+          <li><a>Roman Numeral Converter</a></li>
+          <li><a>Caesars Cipher</a></li>
+          <li><a>Telephone Number Validator</a></li>
+          <li><a>Cash Register</a></li>
         </ol>
           <a href="https://www.freecodecamp.org/certification/zachorton/front-end-development-libraries">Front End Development Libraries Developer Certification</a>
         <ol>
