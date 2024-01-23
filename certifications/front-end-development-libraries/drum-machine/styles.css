@@ -1,0 +1,78 @@
+.drumContainer {
+  font-family: Russo One;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8d8d8d;
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  button.drum-pad {
+    font-family: Russo One;
+  }
+
+  #drum-machine {
+    width: 100%;
+    min-height: 45%;
+    border: 7px solid orange;
+    background-color: rgba(211, 211, 211, 0.65);
+    display: flex;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1999px) {
+    #drum-machine {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    #drum-machine {
+      width: 45%;
+    }
+  }
+
+  div.drum-pads {
+    background-color: rgba(211, 211, 211, 0.65);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+  }
+
+  button.drum-pad {
+    cursor: pointer;
+    background-color: #8d8d8d;
+    font-size: x-large;
+    min-width: 160px;
+    min-height: 130px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: black 3px 3px 5px;
+  }
+
+  .drum-pad:active {
+    transform: translate(2px, 2px);
+    background-color: orange;
+  }
+
+  #display {
+    background-color: #8d8d8d;
+    min-width: 300px;
+    min-height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    box-shadow: black 3px 3px 5px;
+  }
+}

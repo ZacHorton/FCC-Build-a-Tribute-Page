@@ -1,0 +1,106 @@
+div.surveyContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url("./collab.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+
+  header {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  h1,
+  h2 {
+    margin: 5px;
+  }
+
+  h2 {
+    font-weight: normal;
+  }
+
+  fieldset {
+    padding: 2em;
+    margin: auto;
+    background-color: rgba(27, 27, 50, 0.8);
+    border: none;
+  }
+
+  ::placeholder {
+    font-size: 1.25em;
+  }
+
+  label {
+    font-size: 1.25em;
+  }
+
+  .labelBlock,
+  textarea {
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    margin: 10px 0 25px;
+    padding: 0.7em;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+
+  select,
+  textarea {
+    margin: 10px 0 23px;
+    padding: 0.4em;
+  }
+
+  select {
+    font-size: 1em;
+    color: #757575;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.25);
+    margin: 7px 5px 10px auto;
+  }
+
+  p {
+    font-size: 1.25em;
+    margin: 0 auto 8px;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+
+  textarea {
+    min-height: 105px;
+    width: 100%;
+    padding: 0.625rem;
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background-color: #37af65;
+    color: white;
+    border: none;
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+}

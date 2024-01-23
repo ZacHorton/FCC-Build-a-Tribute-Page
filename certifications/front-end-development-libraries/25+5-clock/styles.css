@@ -1,0 +1,88 @@
+.clockContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  background-color: white;
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  #break-session-flex {
+    display: flex;
+  }
+
+  #break-container {
+    padding: 10px;
+  }
+
+  #session-container {
+    padding: 10px;
+  }
+
+  #break-data {
+    display: flex;
+    justify-content: center;
+  }
+
+  #session-data {
+    display: flex;
+    justify-content: center;
+  }
+
+  #timer-container {
+    text-align: center;
+    margin: 10px;
+    padding: 10px 35%;
+    border: 3px solid black;
+    border-radius: 50px;
+  }
+
+  #time-left {
+    font-size: 80px;
+  }
+
+  .start {
+    color: green;
+  }
+
+  .stop {
+    color: black;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 5px;
+  }
+
+  i {
+    margin: 0 3px;
+  }
+
+  p {
+    font-size: 80%;
+    margin-top: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: black;
+  }
+}

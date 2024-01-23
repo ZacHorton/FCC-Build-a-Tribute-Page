@@ -1,0 +1,102 @@
+div.markdownPreviewerContainer {
+  background-color: #8d99ae;
+  height: 100vh;
+  overflow: hidden;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  .app-container {
+    margin: auto;
+    max-width: 800px;
+    box-sizing: border-box;
+  }
+
+  /* Toolbar Component */
+  .toolbar-flex-container {
+    background-color: #2b2d42;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px auto auto auto;
+    width: 100%;
+    border: 1px solid black;
+    z-index: 1;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
+  }
+
+  .toolbar-flex-span-left {
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+    padding: 2px;
+  }
+
+  .toolbar-fcc-icon {
+    margin: auto auto auto 5px;
+    font-size: 150%;
+    color: white;
+  }
+
+  .toolbar-h4 {
+    margin: auto auto auto 5px;
+    font-family: Russo One;
+    font-weight: normal;
+    font-size: larger;
+    color: white;
+  }
+
+  .toolbar-button {
+    background: transparent;
+    border: none;
+  }
+
+  .toolbar-expand-icon,
+  .toolbar-compress-icon {
+    margin: auto 5px auto auto;
+    font-size: 125%;
+    vertical-align: middle;
+    color: white;
+  }
+
+  /* Editor Component */
+  #editor,
+  #editor-expanded {
+    background-color: #edf2f4;
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    padding: 5px 7px;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
+    outline: none;
+  }
+
+  #editor-expanded {
+    min-height: 90vh;
+  }
+
+  /* Previewer Component */
+  #preview,
+  #preview-expanded {
+    background-color: #edf2f4;
+    border: 1px solid black;
+    border-top: none;
+    resize: vertical;
+    box-shadow: 1px 1px 10px 2px #2b2d42;
+    min-height: 200px;
+    padding: 5px 7px;
+  }
+
+  #preview-expanded > h1,
+  #preview > h1 {
+    margin-top: 0;
+  }
+
+  #preview-expanded {
+    min-height: 90vh;
+  }
+}

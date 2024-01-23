@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+body {
+  margin: 0;
+}
+
+div.homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+
+  nav > a:first-child {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  li {
+    padding: 15px;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: black;
+    display: block;
+    font-size: larger;
+  }
+}
