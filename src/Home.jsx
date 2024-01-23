@@ -6,7 +6,7 @@ export function Home() {
     <div className="homeContainer">
       <nav>
         <a href="https://www.freeCodeCamp.org">freeCodeCamp.org</a>
-        <a href="https://www.freecodecamp.org/certification/zachorton/responsive-web-design">Responsive Web Design Certification - Issued Apr 2023</a>
+        <a href="https://www.freecodecamp.org/certification/zachorton/responsive-web-design">Responsive Web Design Developer Certification</a>
         <ol>
           <li><Link to="/survey-form">Survey Form</Link></li>
           <li><Link to="/tribute-page">Tribute Page</Link></li>
@@ -14,7 +14,7 @@ export function Home() {
           <li><Link to="/product-landing-page">Product Landing Page</Link></li>
           <li><Link to="/personal-portfolio-webpage">Personal Portfolio Webpage</Link></li>
         </ol>
-        <a href="https://www.freecodecamp.org/certification/zachorton/javascript-algorithms-and-data-structures">JavaScript Algorithms and Data Structures Certification - Issued Nov 2023</a>
+        <a href="https://www.freecodecamp.org/certification/zachorton/javascript-algorithms-and-data-structures">JavaScript Algorithms and Data Structures Developer Certification</a>
         <ol>
           <li><Link to="/">Palindrome Checker</Link></li>
           <li><Link to="/">Roman Numeral Converter</Link></li>
@@ -22,7 +22,7 @@ export function Home() {
           <li><Link to="/">Telephone Number Validator</Link></li>
           <li><Link to="/">Cash Register</Link></li>
         </ol>
-          <a href="">Front End Development Libraries Certification</a>
+          <a href="https://www.freecodecamp.org/certification/zachorton/front-end-development-libraries">Front End Development Libraries Developer Certification</a>
         <ol>
           <li><Link to="/random-quote-machine">Random Quote Machine</Link></li>
           <li><Link to="/markdown-previewer">Markdown Previewer</Link></li>
