@@ -30,6 +30,11 @@ export function Home() {
           <li><Link to="/javascript-calculator">JavaScript Calculator</Link></li>
           <li><Link to="/25+5-clock">25 + 5 Clock</Link></li>
         </ol>
+          <a>Data Visualization Developer Certification</a>
+          <ol>
+            <li><Link to="/bar-chart">Bar Chart</Link></li>
+          </ol>
+
       </nav>
     </div>
   );

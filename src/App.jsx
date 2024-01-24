@@ -10,6 +10,7 @@ import {MarkdownPreviewer} from "../certifications/front-end-development-librari
 import {DrumMachine} from "../certifications/front-end-development-libraries/drum-machine/DrumMachine.jsx"
 import {Calculator} from "../certifications/front-end-development-libraries/javaScript-calculator/Calculator.jsx"
 import {Clock} from "../certifications/front-end-development-libraries/25+5-clock/Clock.jsx"
+import {BarChart} from "../certifications/data-visualization/bar-chart/BarChart.jsx"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/drum-machine" element={<DrumMachine />} />
       <Route path="/javascript-calculator" element={<Calculator />} />
       <Route path="/25+5-clock" element={<Clock />} />
+      <Route path="/bar-chart" element={<BarChart />} />
     </Routes>
   )
 }
