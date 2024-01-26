@@ -1,0 +1,29 @@
+.barChartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgrey;
+
+.container {
+    height: 560px;
+    width: 900px;
+    box-shadow: 2px 2px 20px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.bar:hover {
+    fill: brown;
+  }
+
+}
