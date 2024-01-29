@@ -13,6 +13,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
   }
 
   .nav-list {
@@ -41,6 +42,13 @@
     align-items: center;
     height: 100vh;
     font-size: 350%;
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
   }
 
   #welcome-section > h2 {
@@ -55,6 +63,12 @@
     align-items: center;
     background-color: cornflowerblue;
     color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  .project-tile > h2 {
+    margin: 15px auto;
     font-size: 350%;
   }
 
@@ -64,12 +78,23 @@
     justify-content: center;
   }
 
+  .tiles > a {
+    background-color: white;
+    margin: 10px;
+  }
+
   img {
     width: 500px;
-    height: 243px;
-    margin: 10px;
-    background-color: white;
-    border: 1px solid white;
+    height: 300px;
+    min-height: 100%;
+    object-fit: cover;
+    box-shadow: 1px 1px 10px 2px black;
+  }
+
+  img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s;
   }
 
   #contact {
@@ -104,11 +129,23 @@
     font-weight: normal;
   }
 
+  @media (max-width: 1072px) {
+    .project-tile {
+      justify-content: flex-start;
+    }
+  }
+
   @media (max-width: 1300px) {
     .contact-links {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 757px) {
+    #contact > h1 {
+      margin-bottom: 25px;
     }
   }
 }

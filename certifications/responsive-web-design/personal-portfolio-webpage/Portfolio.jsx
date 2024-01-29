@@ -34,31 +34,31 @@ export function Portfolio() {
           <h2>These are some of my projects</h2>
           <div className="tiles">
             <a
-              href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/new-responsive-web-design/certification-projects/05-survey-form"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/survey-form"
               target="_blank"
             >
               <img src={survey} />
             </a>
             <a
-              href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/new-responsive-web-design/certification-projects/10-tribute-page"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/tribute-page"
               target="_blank"
             >
               <img src={tribute} />
             </a>
             <a
-              href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/new-responsive-web-design/certification-projects/14-technical-documentation-page"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/technical-documentation-page"
               target="_blank"
             >
               <img src={techDoc} />
             </a>
             <a
-              href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/new-responsive-web-design/certification-projects/17-product-landing-page"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/product-landing-page"
               target="_blank"
             >
               <img src={product} />
             </a>
             <a
-              href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/new-responsive-web-design/certification-projects/20-personal-portfolio-webpage"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/personal-portfolio-webpage"
               target="_blank"
             >
               <img src={portfolio} />
@@ -99,7 +99,8 @@ export function Portfolio() {
             <FaLinkedin />{" "}
             LinkedIn
           </a>
-          <a href="mailto:fullstackzac@gmail.com" className="contact-details">
+          <a href="mailto:fullstackzac@gmail.com"
+            className="contact-details">
             <FaAt />{" "}
             Send a mail
           </a>
