@@ -7,13 +7,12 @@
 4. [Product Landing Page](https://zac-horton-freecodecamp-projects.netlify.app/product-landing-page)
 5. [Personal Portfolio Webpage](https://zac-horton-freecodecamp-projects.netlify.app/personal-portfolio-webpage)
 
-
 [JavaScript Algorithms and Data Structures Developer Certification](https://www.freecodecamp.org/certification/zachorton/javascript-algorithms-and-data-structures)
-1. Palindrome Checker
-2. Roman Numeral Converter
-3. Caesars Cipher
-4. Telephone Number Validator
-5. Cash Register
+1. [Palindrome Checker](https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/palindrome-checker.js)
+2. [Roman Numeral Converter](https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/roman-numeral-converter.js)
+3. [Caesars Cipher](https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/caesars-cipher.js)
+4. [Telephone Number Validator](https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/telephone-number-validator.js)
+5. [Cash Register](https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/cash-register.js)
 
 [Front End Development Libraries Developer Certification](https://www.freecodecamp.org/certification/zachorton/front-end-development-libraries)
 1. [Random Quote Machine](https://zac-horton-freecodecamp-projects.netlify.app/random-quote-machine)

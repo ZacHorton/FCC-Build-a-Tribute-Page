@@ -1,4 +1,7 @@
-// https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register
+/*
+Cash Register
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register
+*/
 
 function deepCopyArray(arr) {
     let copyArr = new Array;

@@ -16,11 +16,11 @@ export function Home() {
         </ol>
         <a href="https://www.freecodecamp.org/certification/zachorton/javascript-algorithms-and-data-structures">JavaScript Algorithms and Data Structures Developer Certification</a>
         <ol>
-          <li><a>Palindrome Checker</a></li>
-          <li><a>Roman Numeral Converter</a></li>
-          <li><a>Caesars Cipher</a></li>
-          <li><a>Telephone Number Validator</a></li>
-          <li><a>Cash Register</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/palindrome-checker.js">Palindrome Checker</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/roman-numeral-converter.js">Roman Numeral Converter</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/caesars-cipher.js">Caesars Cipher</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/telephone-number-validator.js">Telephone Number Validator</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/blob/master/certifications/javaScript-algorithms-and-data-structures/cash-register.js">Cash Register</a></li>
         </ol>
           <a href="https://www.freecodecamp.org/certification/zachorton/front-end-development-libraries">Front End Development Libraries Developer Certification</a>
         <ol>
