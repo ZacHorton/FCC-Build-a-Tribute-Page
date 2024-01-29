@@ -123,7 +123,6 @@ div.techDocContainer {
 
   @media only screen and (max-width: 815px) {
     #navbar ul {
-      border: 1px solid;
       height: 207px;
     }
 
@@ -133,31 +132,18 @@ div.techDocContainer {
       padding: 0;
       margin: 0;
       width: 100%;
-      max-height: 275px;
+      max-height: 200px;
       border: none;
       z-index: 1;
       border-bottom: 2px solid;
+      overflow: scroll;
+      overflow-x: hidden;
     }
 
     #main-doc {
       position: relative;
       margin-left: 0px;
-      margin-top: 270px;
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-    #main-doc {
-      margin-left: -10px;
-    }
-
-    code {
-      margin-left: -20px;
-      width: 100%;
-      padding: 15px;
-      padding-left: 10px;
-      padding-right: 45px;
-      min-width: 233px;
+      margin-top: 200px;
     }
   }
 }
