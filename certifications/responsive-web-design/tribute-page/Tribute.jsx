@@ -20,7 +20,7 @@ export function Tribute() {
             <strong>global technology education for free</strong>.
           </figcaption>
         </figure>
-        <div class="tribute-info-container">
+        <div className="tribute-info-container">
           <div id="tribute-info">
             <p>
               Quincy quotes from{" "}
