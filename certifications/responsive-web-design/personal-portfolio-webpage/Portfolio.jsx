@@ -33,6 +33,12 @@ export function Portfolio() {
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/survey-form.png" />
             </a>
             <a
+              href="https://zac-horton-freecodecamp-projects.netlify.app/technical-documentation-page"
+              target="_blank"
+            >
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/technical-documentation-page.png" />
+            </a>
+            <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/product-landing-page"
               target="_blank"
             >
@@ -43,12 +49,6 @@ export function Portfolio() {
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/random-quote-machine.png" />
-            </a>
-            <a
-              href="https://zac-horton-freecodecamp-projects.netlify.app/markdown-previewer"
-              target="_blank"
-            >
-              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/markdown-previewer.png" />
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/drum-machine"
