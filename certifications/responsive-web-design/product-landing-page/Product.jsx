@@ -1,8 +1,4 @@
 import "./styles.css";
-import cross from "./cross.png"
-import handshake from "./handshake.gif"
-import idea from "./idea.gif"
-import search from "./search.gif"
 
 export function Product() {
   return (
@@ -12,7 +8,8 @@ export function Product() {
          <ul className="flex-header-container">
             <li className="logo">
             <a href="#hero">
-               <img id="header-img" src={cross} />
+               <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Christian_Cross_icon.svg" />
+               {/* <img id="header-img" src={cross} /> */}
                <h1 id="header-brand"><span id="horton">HORTON</span><span id="digital">DIGITAL</span></h1>
                </a>
             </li>
@@ -39,10 +36,7 @@ export function Product() {
             <h2 id="features-heading">We are <span className="highlight">Web Experts</span><br />Ready to <span className="highlight-2">Serve Your Business!</span></h2>
             
             <div className="flex-container">
-               <div className="icon">
-                  <a href="https://www.flaticon.com/free-animated-icons/idea" title="idea animated icons" target="_blank">
-                     <img className="gif" src={idea} /></a>
-               </div>
+                  <i className="fa-solid fa-pen-to-square fa-xl"></i>
                <div className="desc">
                   <h4>Non-Disclosure Agreement</h4>
                   <p>Bring your ideas to life with peace of mind! </p>
@@ -51,11 +45,7 @@ export function Product() {
          </div>
 
          <div className="flex-container">
-            <div className="icon">
-               <a href="https://www.flaticon.com/free-animated-icons/magnifying-glass"
-                  title="magnifying glass animated icons" target="_blank">
-                  <img className="gif" src={search} /></a>
-            </div>
+            <i className="fa-solid fa-globe fa-xl highlight"></i>
             <div className="desc">
                <h4>Search Engine Optimization</h4>
                <p>Have your site rank well on Google!</p>
@@ -63,10 +53,7 @@ export function Product() {
       </div>
 
       <div className="flex-container">
-         <div className="icon">
-            <a href="https://www.flaticon.com/free-animated-icons/deal" title="deal animated icons" target="_blank">
-               <img className="gif" src={handshake} /></a>
-         </div>
+            <i className="fa-solid fa-handshake fa-xl"></i>
          <div className="desc">
             <h4>30 Days Money Back Guarantee</h4>
             <p>Not satisfied? Recieve a full refund!</p>
