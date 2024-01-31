@@ -46,7 +46,7 @@ export function RandomQuoteMachine() {
           <div id="quote-box">
             <div id="text">
               <h1>
-                <FaQuoteLeft /> 
+                <FaQuoteLeft />{" "} 
                 {quote.quote}
               </h1>
             </div>
