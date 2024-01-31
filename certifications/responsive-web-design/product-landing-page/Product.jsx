@@ -8,8 +8,7 @@ export function Product() {
          <ul className="flex-header-container">
             <li className="logo">
             <a href="#hero">
-               <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Christian_Cross_icon.svg" />
-               {/* <img id="header-img" src={cross} /> */}
+               <img id="header-img" src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/product-landing-page/cross.png" />
                <h1 id="header-brand"><span id="horton">HORTON</span><span id="digital">DIGITAL</span></h1>
                </a>
             </li>

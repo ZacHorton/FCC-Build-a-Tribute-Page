@@ -1,5 +1,4 @@
 import "./styles.css";
-import qunicy from "./quincy-larson.jpeg";
 
 export function Tribute() {
   return (
@@ -11,7 +10,7 @@ export function Tribute() {
       </header>
       <main id="main">
         <figure id="img-div">
-          <img id="image" src={qunicy} />
+          <img id="image" src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/tribute-page/quincy-larson.jpeg" />
           <figcaption id="img-caption">
             Founder of{" "}
             <a href="https://www.freecodecamp.org/" target="_blank">
