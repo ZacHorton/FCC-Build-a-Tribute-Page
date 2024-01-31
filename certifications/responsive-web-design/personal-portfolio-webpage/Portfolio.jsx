@@ -31,36 +31,42 @@ export function Portfolio() {
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/survey-form.png" />
+              Survey Form
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/technical-documentation-page"
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/technical-documentation-page.png" />
+              Technical Documentation Page
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/product-landing-page"
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/product-landing-page.png" />
+              Product Landing Page
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/random-quote-machine"
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/random-quote-machine.png" />
+              Random Quote Machine
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/drum-machine"
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/drum-machine.png" />
+              Drum Machine
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/javascript-calculator"
               target="_blank"
             >
               <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/javaScript-calculator.png" />
+              JavaScript Calculator
             </a>
           </div>
         </div>
@@ -74,7 +80,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <i class="fa-brands fa-facebook"></i> Facebook
+            <i className="fa-brands fa-facebook"></i> Facebook
           </a>
           <a
             id="profile-link"
@@ -82,7 +88,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <i class="fa-brands fa-github"></i> GitHub
+            <i className="fa-brands fa-github"></i> GitHub
           </a>
           <a
             id="profile-link"
@@ -90,10 +96,10 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
+            <i className="fa-brands fa-linkedin"></i> LinkedIn
           </a>
           <a href="mailto:fullstackzac@gmail.com" className="contact-details">
-            <i class="fa-regular fa-envelope"></i> Send email
+            <i className="fa-regular fa-envelope"></i> Send email
           </a>
         </div>
       </section>
