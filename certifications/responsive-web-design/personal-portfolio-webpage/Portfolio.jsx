@@ -1,5 +1,4 @@
 import "./styles.css";
-import { FaFacebook, FaGithub, FaLinkedin, FaAt } from "react-icons/fa";
 
 export function Portfolio() {
   return (
@@ -75,7 +74,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaFacebook /> Facebook
+            <i class="fa-brands fa-facebook"></i> Facebook
           </a>
           <a
             id="profile-link"
@@ -83,7 +82,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaGithub /> GitHub
+            <i class="fa-brands fa-github"></i> GitHub
           </a>
           <a
             id="profile-link"
@@ -91,10 +90,10 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaLinkedin /> LinkedIn
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
           </a>
           <a href="mailto:fullstackzac@gmail.com" className="contact-details">
-            <FaAt /> Send a mail
+            <i class="fa-regular fa-envelope"></i> Send email
           </a>
         </div>
       </section>
