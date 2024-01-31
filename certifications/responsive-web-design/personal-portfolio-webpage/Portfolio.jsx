@@ -1,11 +1,5 @@
 import "./styles.css";
-import portfolio from "./personal-portfolio-webpage.png";
-import placeholder from "./placeholder-image.png";
-import product from "./product-landing-page.png";
-import survey from "./survey-form.png";
-import techDoc from "./technical-documentation-page.png";
-import tribute from "./tribute-page.png";
-import { FaFacebook, FaGithub, FaLinkedin, FaAt} from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaAt } from "react-icons/fa";
 
 export function Portfolio() {
   return (
@@ -37,34 +31,37 @@ export function Portfolio() {
               href="https://zac-horton-freecodecamp-projects.netlify.app/survey-form"
               target="_blank"
             >
-              <img src={survey} />
-            </a>
-            <a
-              href="https://zac-horton-freecodecamp-projects.netlify.app/tribute-page"
-              target="_blank"
-            >
-              <img src={tribute} />
-            </a>
-            <a
-              href="https://zac-horton-freecodecamp-projects.netlify.app/technical-documentation-page"
-              target="_blank"
-            >
-              <img src={techDoc} />
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/survey-form.png" />
             </a>
             <a
               href="https://zac-horton-freecodecamp-projects.netlify.app/product-landing-page"
               target="_blank"
             >
-              <img src={product} />
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/product-landing-page.png" />
             </a>
             <a
-              href="https://zac-horton-freecodecamp-projects.netlify.app/personal-portfolio-webpage"
+              href="https://zac-horton-freecodecamp-projects.netlify.app/random-quote-machine"
               target="_blank"
             >
-              <img src={portfolio} />
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/random-quote-machine.png" />
             </a>
-            <a href="https://github.com/ZacHorton" target="_blank">
-              <img src={placeholder} />
+            <a
+              href="https://zac-horton-freecodecamp-projects.netlify.app/markdown-previewer"
+              target="_blank"
+            >
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/markdown-previewer.png" />
+            </a>
+            <a
+              href="https://zac-horton-freecodecamp-projects.netlify.app/drum-machine"
+              target="_blank"
+            >
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/drum-machine.png" />
+            </a>
+            <a
+              href="https://zac-horton-freecodecamp-projects.netlify.app/javascript-calculator"
+              target="_blank"
+            >
+              <img src="https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/personal-portfolio-webpage/javaScript-calculator.png" />
             </a>
           </div>
         </div>
@@ -78,8 +75,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaFacebook />{" "}
-            Facebook
+            <FaFacebook /> Facebook
           </a>
           <a
             id="profile-link"
@@ -87,8 +83,7 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaGithub />{" "}
-            GitHub
+            <FaGithub /> GitHub
           </a>
           <a
             id="profile-link"
@@ -96,13 +91,10 @@ export function Portfolio() {
             target="_blank"
             className="contact-details"
           >
-            <FaLinkedin />{" "}
-            LinkedIn
+            <FaLinkedin /> LinkedIn
           </a>
-          <a href="mailto:fullstackzac@gmail.com"
-            className="contact-details">
-            <FaAt />{" "}
-            Send a mail
+          <a href="mailto:fullstackzac@gmail.com" className="contact-details">
+            <FaAt /> Send a mail
           </a>
         </div>
       </section>
