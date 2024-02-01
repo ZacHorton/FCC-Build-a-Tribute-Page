@@ -8,7 +8,7 @@ div.surveyContainer {
       rgba(58, 58, 158, 0.8),
       rgba(136, 136, 206, 0.7)
     ),
-    url("./collab.jpg");
+    url("https://raw.githubusercontent.com/ZacHorton/freeCodeCamp-projects/master/certifications/responsive-web-design/survey-form/collab.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
