@@ -6,8 +6,8 @@
     background-color: lightgrey;
 
 .container {
-    height: 560px;
-    width: 900px;
+    height: 600px;
+    width: 925px;
     box-shadow: 2px 2px 20px;
     background-color: white;
 
@@ -19,11 +19,16 @@
 
 #title {
     text-align: center;
-    font-size: xx-large;
+}
+
+svg {
+    border: 1px solid red;
 }
 
 .bar:hover {
     fill: brown;
   }
+
+
 
 }

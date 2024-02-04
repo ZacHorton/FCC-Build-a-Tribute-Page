@@ -1,40 +1,53 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import "./styles.css";
 import gdpData from "./gdp-data.json";
 
 export function BarChart() {
   const svgRef = useRef();
-  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+  // const dataset = [
+  //   ["1947-01-01", 243.1],
+  //   ["1947-04-01", 246.3],
+  //   ["1947-07-01", 250.1],
+  //   ["1947-10-01", 260.3],
+  //   ["1948-01-01", 266.2],
+  // ];
+  const dataset = gdpData.data;
+
 
   useEffect(() => {
-    const w = 800;
-    const h = 160;
 
+    // Declare the chart dimensions and margins.
+    const widthOfSVG = 800;
+    const heightOfSVG = 400;
+    const widthofRect = widthOfSVG / d3.count(dataset, d => d[1]);
+
+    // Declare the x (horizontal position) scale.
+    // const xScale = d3.scaleLinear()
+    //     .domain([0, 160]) // 40 * 5
+    //     .range([0, widthOfSVG - widthofRect]);
+
+     // Declare the y (vertical position) scale.
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, d => d[1])])
+      .range([0, heightOfSVG]);
+
+     // Create the SVG container.
     const svg = d3.select(svgRef.current)
-                  .attr("width", w)
-                  .attr("height", h);
+      .attr("width", widthOfSVG)
+      .attr("height", heightOfSVG);
 
-    svg.selectAll("rect")
+    // Add a rect for each bar.
+    svg.append("g")
+      .selectAll("rect")
       .data(dataset)
-      .enter()
-      .append("rect")
-      .attr("x", (d, i) => i * 30)
-      .attr("y", (d, i) => h - 3 * d)
-      .attr("width", 25)
-      .attr("height", (d, i) => d * 3)
-      .attr("fill", "navy")
-      .attr("class", "bar")
-      .append("title")
-      .text((d) => d);
-
-    svg.selectAll("text")
-      .data(dataset)
-      .enter()
-      .append("text")
-      .text((d) => d)
-      .attr("x", (d, i) => i * 30)
-      .attr("y", (d, i) => h - (d * 3 + 3));
+      .join("rect")
+      .attr("x", (d, i) => i * widthofRect)
+      // place the bars right-side-up: y = heightOfSVG - heightOfBar
+      .attr("y", d => heightOfSVG - yScale(d[1]))
+      .attr("width", widthofRect)
+      .attr("height", d => yScale(d[1]))
   }, [dataset]);
 
   return (
