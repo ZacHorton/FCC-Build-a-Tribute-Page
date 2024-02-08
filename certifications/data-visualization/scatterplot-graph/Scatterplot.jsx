@@ -397,6 +397,12 @@ export function Scatterplot() {
       .attr("transform", "translate(" + padding + ", 0)")
       .call(yAxis);
 
+    const tooltip = d3
+      .select(".container")
+      .append("div")
+      .attr("id", "tooltip")
+      .style("opacity", 0);
+
     svg
       .selectAll("circle")
       .data(dataset)
@@ -410,6 +416,25 @@ export function Scatterplot() {
       .attr("class", "dot")
       .style("fill", (d) => {
         return d.Doping === "" && d.URL === "" ? "green" : "red";
+      })
+      .on("mousemove", function (event, d) {
+        const [x, y] = d3.pointer(event);
+        const mouseX = event.pageX;
+        const mouseY = event.pageY;
+        tooltip
+          .attr("data-year", d.Year)
+          .style("opacity", 1)
+          .style("border", (data) => {
+            return d.Doping === "" && d.URL === "" ? "3px solid green" : "3px solid red"
+          })
+          .style("left", mouseX + 10 + "px")
+          .style("top", mouseY + 10 + "px")
+          .html(`${d.Name}: ${d.Nationality}<br />
+          Year: ${d.Year.getFullYear()}, ${d.Time.getMinutes()}:${d.Time.getSeconds()}      
+          ${d.Doping === "" && d.URL === "" ? `` : `<br /><br />${d.Doping }`}`);
+      })
+      .on("mouseout", function () {
+        tooltip.style("opacity", 0);
       });
 
     const legend = svg.append("g").attr("id", "legend");
