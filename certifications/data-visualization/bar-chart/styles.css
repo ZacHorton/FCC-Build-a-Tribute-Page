@@ -31,4 +31,17 @@
     fill: #00adb5;
     stroke: #00adb5;
   }
+
+  #tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none; 
+    border: 3px solid #00adb5;
+    font-size: large;
+  }
 }
+
+

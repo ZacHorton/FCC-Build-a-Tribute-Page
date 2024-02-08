@@ -303,6 +303,12 @@ export function BarChart() {
 
     const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
+    const tooltip = d3
+      .select(".container")
+      .append("div")
+      .attr("id", "tooltip")
+      .style("opacity", 0);
+
     svg
       .selectAll("rect")
       .data(dataset)
@@ -317,8 +323,24 @@ export function BarChart() {
       .attr("y", (d, i) => yScale(d[1]))
       .attr("width", rectW)
       .attr("height", (d, i) => h - padding - yScale(d[1]))
-      .append("title")
-      .text((d) => `${new Date(d[0]).getFullYear()}\n$${d[1]} Billion`);
+      .on("mousemove", function (event, d) {
+        const [x, y] = d3.pointer(event);
+        const mouseX = event.pageX;
+        const mouseY = event.pageY;
+        tooltip
+          .attr("data-date", d[0])
+          .style("opacity", 1)
+          .style("left", mouseX + 10 + "px")
+          .style("top", mouseY + 10 + "px")
+          .html(
+            `${new Date(d[0]).getFullYear()}<br>$${d[1]
+              .toFixed(1)
+              .replace(/(\d)(?=(\d{3})+\.)/, "$1,")} Billion`
+          );
+      })
+      .on("mouseout", function () {
+        tooltip.style("opacity", 0);
+      });
 
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
