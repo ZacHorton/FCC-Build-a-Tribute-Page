@@ -411,6 +411,41 @@ export function Scatterplot() {
       .style("fill", (d) => {
         return d.Doping === "" && d.URL === "" ? "green" : "red";
       });
+
+    const legend = svg.append("g").attr("id", "legend");
+
+    legend
+      .append("text")
+      .attr("x", 0)
+      .attr("y", 25)
+      .text("Riders with no doping allegations");
+
+    legend
+      .append("rect")
+      .attr("x", 225)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "green")
+      .attr("stroke", "black");
+
+    legend
+      .append("text")
+      .attr("x", 270)
+      .attr("y", 25)
+      .text("Riders with doping allegations   ");
+
+    legend
+      .append("rect")
+      .attr("x", 475)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "red")
+      .attr("stroke", "black");
+
+    const bbox = legend.node().getBBox().width;
+    legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 0)");
   }, [dataset]);
 
   return (
