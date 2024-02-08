@@ -11,7 +11,7 @@ import {DrumMachine} from "../certifications/front-end-development-libraries/dru
 import {Calculator} from "../certifications/front-end-development-libraries/javaScript-calculator/Calculator.jsx"
 import {Clock} from "../certifications/front-end-development-libraries/25+5-clock/Clock.jsx"
 import {BarChart} from "../certifications/data-visualization/bar-chart/BarChart.jsx"
-// import {Scatterplot} from "../certifications/data-visualization/scatterplot-graph/placeholder.jsx"
+import {Scatterplot} from "../certifications/data-visualization/scatterplot-graph/Scatterplot.jsx"
 // import {HeatMap} from "../certifications/data-visualization/heat-map/placeholder.jsx"
 // import {Choropleth} from "../certifications/data-visualization/choropleth-map/placeholder.jsx"
 // import {Treemap} from "../certifications/data-visualization/treemap-diagram/placeholder.jsx"
@@ -31,8 +31,8 @@ function App() {
       <Route path="/javascript-calculator" element={<Calculator />} />
       <Route path="/25+5-clock" element={<Clock />} />
       <Route path="/bar-chart" element={<BarChart />} />
-      {/* <Route path="/scatterplot-graph" element={<BarChart />} />
-      <Route path="/heat-map" element={<BarChart />} />
+      <Route path="/scatterplot-graph" element={<Scatterplot />} />
+      {/* <Route path="/heat-map" element={<BarChart />} />
       <Route path="/choropleth-map" element={<BarChart />} />
       <Route path="/treemap-diagram" element={<BarChart />} />     */}
     </Routes>
