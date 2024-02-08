@@ -358,39 +358,32 @@ export function Scatterplot() {
     },
   ];
 
+  dataset.forEach(function (d) {
+    d.Year = new Date(d.Year, 0);
+    const parsedTime = d.Time.split(":");
+    d.Time = new Date(0, 0, 1, 0, parsedTime[0], parsedTime[1]);
+  });
+
   useEffect(() => {
     const w = 1050;
     const h = 600;
     const padding = 60;
 
-    console.log(`${d3.max(dataset, (d) => d.Time)}`)
-
     const xScale = d3
       .scaleTime()
-      .domain([
-        d3.min(dataset, (d) => new Date(d.Year, 0)), // Sat Jan 01 1994 00:00:00 GMT-0500 (Eastern Standard Time)
-        d3.max(dataset, (d) => new Date(d.Year, 0)), // Thu Jan 01 2015 00:00:00 GMT-0500 (Eastern Standard Time)
-      ])
+      .domain([d3.min(dataset, (d) => d.Year), d3.max(dataset, (d) => d.Year)])
       .range([padding, w - padding]);
 
     const yScale = d3
-      .scaleBand()
-      .domain([
-        d3.max(dataset, (d) => d.Time), // 39:50
-        d3.min(dataset, (d) => d.Time), // 36:50
-      ])
-      .range([h - padding, padding])
-
-    const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
-
-    const tooltip = d3
-      .select(".container")
-      .append("div")
-      .attr("id", "tooltip")
-      .style("opacity", 0);
+      .scaleTime()
+      .domain([d3.max(dataset, (d) => d.Time), d3.min(dataset, (d) => d.Time)])
+      .range([h - padding, padding]);
 
     const xAxis = d3.axisBottom(xScale);
-    const yAxis = d3.axisLeft(yScale);
+    const timeFormat = d3.timeFormat("%M:%S");
+    const yAxis = d3.axisLeft(yScale).tickFormat(timeFormat);
+
+    const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
     svg
       .append("g")
@@ -403,6 +396,21 @@ export function Scatterplot() {
       .attr("id", "y-axis")
       .attr("transform", "translate(" + padding + ", 0)")
       .call(yAxis);
+
+    svg
+      .selectAll("circle")
+      .data(dataset)
+      .enter()
+      .append("circle")
+      .attr("cx", (d) => xScale(d.Year))
+      .attr("data-xvalue", (d) => d.Year)
+      .attr("cy", (d) => yScale(d.Time))
+      .attr("data-yvalue", (d) => d.Time)
+      .attr("r", (d) => 5)
+      .attr("class", "dot")
+      .style("fill", (d) => {
+        return d.Doping === "" && d.URL === "" ? "green" : "red";
+      });
   }, [dataset]);
 
   return (
