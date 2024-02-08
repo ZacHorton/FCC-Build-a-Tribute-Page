@@ -30,14 +30,14 @@ export function Home() {
           <li><Link to="/javascript-calculator">JavaScript Calculator</Link></li>
           <li><Link to="/25+5-clock">25 + 5 Clock</Link></li>
         </ol>
-          {/* <a>Data Visualization Developer Certification</a>
+        <a>Data Visualization Developer Certification</a>
           <ol>
             <li><Link to="/bar-chart">Bar Chart</Link></li>
-            <li><Link to="/scatterplot-graph">Scatterplot Graph</Link></li>
+            {/* <li><Link to="/scatterplot-graph">Scatterplot Graph</Link></li>
             <li><Link to="/heat-map">Heat Map</Link></li>
             <li><Link to="/choropleth-map">Choropleth Map</Link></li>
-            <li><Link to="/treemap-diagram">Treemap Diagram</Link></li>
-          </ol> */}
+            <li><Link to="/treemap-diagram">Treemap Diagram</Link></li> */}
+          </ol> 
       </nav>
     </div>
   );
