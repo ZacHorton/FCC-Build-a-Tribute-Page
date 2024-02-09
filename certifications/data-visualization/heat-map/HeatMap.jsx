@@ -9,22 +9,28 @@ export function HeatMap() {
   useEffect(() => {
     const w = 1050;
     const h = 600;
-    const padding = 60;
+    const padding = 100;
 
     const xScale = d3
-      .scaleBand()
-      .domain([])
+      .scaleTime()
+      .domain([
+        d3.min(dataset.monthlyVariance, (d) => new Date(d.year, 0)),
+        d3.max(dataset.monthlyVariance, (d) => new Date(d.year, 0)),
+      ])
       .range([padding, w - padding]);
 
     const yScale = d3
-      .scaleBand()
-      .domain([])
+      .scaleTime()
+      .domain([new Date(2024, 11), new Date(2024, 0)])
       .range([h - padding, padding]);
 
-    const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
-
     const xAxis = d3.axisBottom(xScale);
-    const yAxis = d3.axisLeft(yScale);
+    const yAxis = d3
+      .axisLeft(yScale)
+      .ticks(d3.timeMonth)
+      .tickFormat(d3.timeFormat("%B"));
+
+    const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
     svg
       .append("g")
