@@ -16,6 +16,12 @@ export function HeatMap() {
     const h = 600;
     const padding = 100;
 
+    const rectW =
+      (w - padding * 2) /
+      (d3.max(dataset.monthlyVariance, (d) => d.year.getFullYear()) -
+        d3.min(dataset.monthlyVariance, (d) => d.year.getFullYear()));
+    const rectH = (h - padding * 2) / 12;
+
     const xScale = d3
       .scaleTime()
       .domain([
@@ -25,15 +31,18 @@ export function HeatMap() {
       .range([padding, w - padding]);
 
     const yScale = d3
-      .scaleTime()
-      .domain([new Date(2024, 11), new Date(2024, 0)])
+      .scaleBand()
+      .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
       .range([h - padding, padding]);
 
     const xAxis = d3.axisBottom(xScale);
-    const yAxis = d3
-      .axisLeft(yScale)
-      .ticks(d3.timeMonth)
-      .tickFormat(d3.timeFormat("%B"));
+
+    const yAxis = d3.axisLeft(yScale).tickFormat(function (month) {
+      var date = new Date(0);
+      date.setUTCMonth(month);
+      var format = d3.utcFormat("%B");
+      return format(date);
+    });
 
     const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
@@ -48,6 +57,22 @@ export function HeatMap() {
       .attr("id", "y-axis")
       .attr("transform", "translate(" + padding + ", 0)")
       .call(yAxis);
+
+    svg
+      .selectAll("rect")
+      .data(dataset.monthlyVariance)
+      .enter()
+      .append("rect")
+      .attr("fill", "white")
+      .attr("stroke", "black")
+      .attr("class", "cell")
+      .attr("data-month", (d) => d.month.getMonth())
+      .attr("data-year", (d) => d.year.getFullYear())
+      .attr("data-temp", (d) => d.variance)
+      .attr("x", (d) => xScale(d.year))
+      .attr("y", (d) => yScale(d.month.getMonth()))
+      .attr("width", rectW)
+      .attr("height", rectH);
   }, [dataset]);
 
   return (
