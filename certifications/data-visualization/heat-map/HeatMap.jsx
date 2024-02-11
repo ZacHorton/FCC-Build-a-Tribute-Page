@@ -32,7 +32,7 @@ export function HeatMap() {
 
     const yScale = d3
       .scaleBand()
-      .domain([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+      .domain([11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
       .range([h - padding, padding]);
 
     const xAxis = d3.axisBottom(xScale);
