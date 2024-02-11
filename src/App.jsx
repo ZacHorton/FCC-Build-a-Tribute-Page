@@ -13,7 +13,7 @@ import {Clock} from "../certifications/front-end-development-libraries/25+5-cloc
 import {BarChart} from "../certifications/data-visualization/bar-chart/BarChart.jsx"
 import {Scatterplot} from "../certifications/data-visualization/scatterplot-graph/Scatterplot.jsx"
 import {HeatMap} from "../certifications/data-visualization/heat-map/HeatMap.jsx"
-// import {Choropleth} from "../certifications/data-visualization/choropleth-map/placeholder.jsx"
+import {Choropleth} from "../certifications/data-visualization/choropleth-map/Choropleth.jsx"
 // import {Treemap} from "../certifications/data-visualization/treemap-diagram/placeholder.jsx"
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
       <Route path="/bar-chart" element={<BarChart />} />
       <Route path="/scatterplot-graph" element={<Scatterplot />} />
       <Route path="/heat-map" element={<HeatMap />} />
-      {/*<Route path="/choropleth-map" element={<ChoroplethMap />} />
-      <Route path="/treemap-diagram" element={<TreemapDiagram />} />     */}
+      <Route path="/choropleth-map" element={<Choropleth />} />
+      {/*<Route path="/treemap-diagram" element={<TreemapDiagram />} />     */}
     </Routes>
   )
 }

@@ -1,0 +1,13 @@
+.choroplethContainer {
+  #title {
+    text-align: center;
+    font-size: 170%;
+    margin-top: 20px;
+  }
+
+  #description {
+    text-align: center;
+    font-size: 150%;
+    margin-top: 10px;
+  }
+}
