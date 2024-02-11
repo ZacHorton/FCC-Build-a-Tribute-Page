@@ -37,7 +37,7 @@ export function HeatMap() {
 
     const xAxis = d3.axisBottom(xScale);
 
-    const formatMonth = function(month) {
+    const formatMonth = function (month) {
       var date = new Date(0);
       date.setUTCMonth(month);
       var format = d3.utcFormat("%B");
@@ -96,6 +96,50 @@ export function HeatMap() {
       .on("mouseout", function () {
         tooltip.style("opacity", 0);
       });
+
+    const legend = svg.append("g").attr("id", "legend");
+
+    var threshold = d3
+    .scaleThreshold()
+    .domain([2.8, 3.9, 5.0, 6.1, 7.2, 8.3, 9.5, 10.6, 11.7, 12.8])
+    .range([
+      "",
+      "#4575b4",
+      "#74add1",
+      "#abd9e9",
+      "#e0f3f8",
+      "#ffffbf",
+      "#fee090",
+      "#fdae61",
+      "#f46d43",
+      "#d73027",
+    ]);
+
+  var x = d3.scaleLinear().domain([2.8, 12.8]).range([0, 250]);
+
+  var xAxisLegend = d3
+    .axisBottom(x)
+    .tickSize(13)
+    .tickValues(threshold.domain())
+    .tickFormat(d3.format(".1f"));
+
+  legend.selectAll("rect")
+    .data(
+      threshold.range().map(function (color) {
+        return threshold.invertExtent(color);
+      })
+    )
+    .enter()
+    .append("rect")
+    .attr("height", 8)
+    .attr("x", (d) => x(d[0]))
+    .attr("width", (d) => x(d[1]) - x(d[0]))
+    .attr("fill", (d) => threshold(d[0]));
+
+    legend.call(xAxisLegend);
+
+    const bbox = legend.node().getBBox().width;
+    legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 35)");
   }, [dataset]);
 
   return (
