@@ -59,7 +59,7 @@ export function HeatMap() {
       .attr("transform", "translate(" + padding + ", 0)")
       .call(yAxis);
 
-      const tooltip = d3
+    const tooltip = d3
       .select(".container")
       .append("div")
       .attr("id", "tooltip")
@@ -70,8 +70,28 @@ export function HeatMap() {
       .data(dataset.monthlyVariance)
       .enter()
       .append("rect")
-      .attr("fill", "white")
-      .attr("stroke", "black")
+      .style("fill", (d) => {
+        var offBase = dataset.baseTemperature + d.variance;
+        if (offBase <= 3.9) {
+          return "#4575b4";
+        } else if (offBase <= 5.0) {
+          return "#74add1";
+        } else if (offBase <= 6.1) {
+          return "#abd9e9";
+        } else if (offBase <= 7.2) {
+          return "#e0f3f8";
+        } else if (offBase <= 8.3) {
+          return "#ffffbf";
+        } else if (offBase <= 9.5) {
+          return "#fee090";
+        } else if (offBase <= 10.6) {
+          return "#fdae61";
+        } else if (offBase <= 11.7) {
+          return "#f46d43";
+        } else if (offBase <= 14) {
+          return "#d73027";
+        }
+      })
       .attr("class", "cell")
       .attr("data-month", (d) => d.month.getMonth())
       .attr("data-year", (d) => d.year.getFullYear())
@@ -88,8 +108,10 @@ export function HeatMap() {
           .attr("data-year", d.year.getFullYear())
           .style("opacity", 1)
           .style("left", mouseX + 10 + "px")
-          .style("top", mouseY + 10 + "px")
-          .html(`${d.year.getFullYear()} - ${formatMonth(d.month.getMonth())}<br />
+          .style(
+            "top",
+            mouseY + 10 + "px"
+          ).html(`${d.year.getFullYear()} - ${formatMonth(d.month.getMonth())}<br />
           ${(dataset.baseTemperature + d.variance).toFixed(1)}<br />
           ${d.variance.toFixed(1)}`);
       })
@@ -100,41 +122,45 @@ export function HeatMap() {
     const legend = svg.append("g").attr("id", "legend");
 
     var threshold = d3
-    .scaleThreshold()
-    .domain([2.8, 3.9, 5.0, 6.1, 7.2, 8.3, 9.5, 10.6, 11.7, 12.8])
-    .range([
-      "",
-      "#4575b4",
-      "#74add1",
-      "#abd9e9",
-      "#e0f3f8",
-      "#ffffbf",
-      "#fee090",
-      "#fdae61",
-      "#f46d43",
-      "#d73027",
-    ]);
+      .scaleThreshold()
+      .domain([2.8, 3.9, 5.0, 6.1, 7.2, 8.3, 9.5, 10.6, 11.7, 12.8])
+      .range([
+        "",
+        "#4575b4",
+        "#74add1",
+        "#abd9e9",
+        "#e0f3f8",
+        "#ffffbf",
+        "#fee090",
+        "#fdae61",
+        "#f46d43",
+        "#d73027",
+      ]);
 
-  var x = d3.scaleLinear().domain([2.8, 12.8]).range([0, 250]);
+    var x = d3.scaleLinear().domain([2.8, 12.8]).range([0, 250]);
 
-  var xAxisLegend = d3
-    .axisBottom(x)
-    .tickSize(13)
-    .tickValues(threshold.domain())
-    .tickFormat(d3.format(".1f"));
+    var xAxisLegend = d3
+      .axisBottom(x)
+      .tickSize(13)
+      .tickValues(threshold.domain())
+      .tickFormat(d3.format(".1f"));
 
-  legend.selectAll("rect")
-    .data(
-      threshold.range().map(function (color) {
-        return threshold.invertExtent(color);
-      })
-    )
-    .enter()
-    .append("rect")
-    .attr("height", 8)
-    .attr("x", (d) => x(d[0]))
-    .attr("width", (d) => x(d[1]) - x(d[0]))
-    .attr("fill", (d) => threshold(d[0]));
+    legend
+      .selectAll("rect")
+      .data(
+        threshold.range().map(function (color) {
+          var d = threshold.invertExtent(color);
+          if (d[0] == null) d[0] = x.domain()[0];
+          if (d[1] == null) d[1] = x.domain()[1];
+          return d;
+        })
+      )
+      .enter()
+      .append("rect")
+      .attr("height", 8)
+      .attr("x", (d) => x(d[0]))
+      .attr("width", (d) => x(d[1]) - x(d[0]))
+      .attr("fill", (d) => threshold(d[0]));
 
     legend.call(xAxisLegend);
 
