@@ -12,19 +12,24 @@ export function Choropleth() {
     const w = 1050;
     const h = 600;
     const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
-  
+
     let drawMap = () => {
-       svg.selectAll("path")
+      svg
+        .selectAll("path")
         // Convert county data from topoJSON to d3 supported geoJSON format
-       .data(feature(countyData, countyData.objects.counties).features)
-       .enter()
-       .append("path")
-       .attr("d", d3.geoPath())
-       .attr("class", "county")
-    }
+        .data(feature(countyData, countyData.objects.counties).features)
+        .enter()
+        .append("path")
+        .attr("d", d3.geoPath())
+        .attr("class", "county")
+        .attr("data-fips", (d) => d.id)
+        .attr("data-education", (d) => {
+          const county = educationData.find(({ fips }) => fips === d.id);
+          return county.bachelorsOrHigher;
+        });
+    };
 
     drawMap();
-
   }, [svgRef]);
 
   return (
