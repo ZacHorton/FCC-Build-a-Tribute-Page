@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
-import { feature } from "topojson";
+import { feature, mesh } from "topojson";
 import "./styles.css";
 import countyData from "./US-county.json";
 import educationData from "./US-education.json";
@@ -33,7 +33,9 @@ export function Choropleth() {
         return county.bachelorsOrHigher;
       })
       .style("fill", (d) => {
-        const county = educationData.find(({ fips }) => fips === d.id).bachelorsOrHigher;
+        const county = educationData.find(
+          ({ fips }) => fips === d.id
+        ).bachelorsOrHigher;
         if (county <= 12) {
           return "#deebf7";
         } else if (county <= 21) {
@@ -46,7 +48,7 @@ export function Choropleth() {
           return "#4292c6";
         } else if (county <= 57) {
           return "#2171b5";
-        } else if (county <= 66) {
+        } else if (county > 57) {
           return "#08519c";
         }
       })
@@ -69,56 +71,61 @@ export function Choropleth() {
         tooltip.style("opacity", 0);
       });
 
-      const legend = svg.append("g").attr("id", "legend");
+    const legend = svg.append("g").attr("id", "legend");
 
-      var threshold = d3
-        .scaleThreshold()
-        .domain([.03, .12, .21, .3, .39, .48, .57, .66]) //8
-        .range([ //9
-          // "#f7fbff",
-          "",
-          "#deebf7",
-          "#c6dbef",
-          "#9ecae1",
-          "#6baed6",
-          "#4292c6",
-          "#2171b5",
-          "#08519c",
-          // "#08306b",
-        ]);
-  
-      var x = d3.scaleLinear().domain([.03, .66]).range([0, 250]);
-  
-      var xAxisLegend = d3
-        .axisBottom(x)
-        .tickSize(13)
-        .tickValues(threshold.domain())
-        .tickFormat(d3.format(".0%"));
-  
-      legend
-        .selectAll("rect")
-        .data(
-          threshold.range().map(function (color) {
-            var d = threshold.invertExtent(color);
-            if (d[0] == null) d[0] = x.domain()[0];
-            if (d[1] == null) d[1] = x.domain()[1];
-            return d;
-          })
-        )
-        .enter()
-        .append("rect")
-        .attr("height", 8)
-        .attr("x", (d) => x(d[0]))
-        .attr("width", (d) => x(d[1]) - x(d[0]))
-        .attr("fill", (d) => threshold(d[0]));
-  
-      legend.call(xAxisLegend);
-  
-      const bbox = legend.node().getBBox().width;
-      legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 27)");
-   
+    var threshold = d3
+      .scaleThreshold()
+      .domain([0.03, 0.12, 0.21, 0.3, 0.39, 0.48, 0.57, 0.66])
+      .range([
+        "",
+        "#deebf7",
+        "#c6dbef",
+        "#9ecae1",
+        "#6baed6",
+        "#4292c6",
+        "#2171b5",
+        "#08519c",
+      ]);
 
+    var x = d3.scaleLinear().domain([0.03, 0.66]).range([0, 250]);
 
+    var xAxisLegend = d3
+      .axisBottom(x)
+      .tickSize(13)
+      .tickValues(threshold.domain())
+      .tickFormat(d3.format(".0%"));
+
+    legend
+      .selectAll("rect")
+      .data(
+        threshold.range().map(function (color) {
+          var d = threshold.invertExtent(color);
+          if (d[0] == null) d[0] = x.domain()[0];
+          if (d[1] == null) d[1] = x.domain()[1];
+          return d;
+        })
+      )
+      .enter()
+      .append("rect")
+      .attr("height", 8)
+      .attr("x", (d) => x(d[0]))
+      .attr("width", (d) => x(d[1]) - x(d[0]))
+      .attr("fill", (d) => threshold(d[0]));
+
+    legend.call(xAxisLegend);
+
+    const bbox = legend.node().getBBox().width;
+    legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 13)");
+
+    svg
+      .append("path")
+      .datum(
+        mesh(countyData, countyData.objects.states, function (a, b) {
+          return a !== b;
+        })
+      )
+      .attr("class", "states")
+      .attr("d", d3.geoPath());
   }, [svgRef]);
 
   return (
