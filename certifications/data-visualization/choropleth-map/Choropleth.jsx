@@ -13,6 +13,12 @@ export function Choropleth() {
     const h = 600;
     const svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
+    const tooltip = d3
+      .select(".container")
+      .append("div")
+      .attr("id", "tooltip")
+      .style("opacity", 0)
+
     let drawMap = () => {
       svg
         .selectAll("path")
@@ -26,6 +32,24 @@ export function Choropleth() {
         .attr("data-education", (d) => {
           const county = educationData.find(({ fips }) => fips === d.id);
           return county.bachelorsOrHigher;
+        })
+        .on("mousemove", function (event, d) {
+          const [x, y] = d3.pointer(event);
+          const mouseX = event.pageX;
+          const mouseY = event.pageY;
+          const base = educationData.find(({ fips }) => fips === d.id)
+          const county = base.area_name;
+          const state = base.state;
+          const percentage = base.bachelorsOrHigher;
+          tooltip
+            .attr("data-education", percentage)
+            .style("opacity", 1)
+            .style("left", mouseX + 10 + "px")
+            .style("top", mouseY + 10 + "px")
+            .html(`${county}, ${state}: ${percentage}%`);
+        })
+        .on("mouseout", function () {
+          tooltip.style("opacity", 0);
         });
     };
 
