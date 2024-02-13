@@ -50,6 +50,56 @@ export function Choropleth() {
       .on("mouseout", function () {
         tooltip.style("opacity", 0);
       });
+
+      const legend = svg.append("g").attr("id", "legend");
+
+      var threshold = d3
+        .scaleThreshold()
+        .domain([.03, .12, .21, .3, .39, .48, .57, .66])
+        .range([
+          "#f7fbff",
+          "#deebf7",
+          "#c6dbef",
+          "#9ecae1",
+          "#6baed6",
+          "#4292c6",
+          "#2171b5",
+          "#08519c",
+          "#08306b",
+        ]);
+  
+      var x = d3.scaleLinear().domain([.03, .66]).range([0, 250]);
+  
+      var xAxisLegend = d3
+        .axisBottom(x)
+        .tickSize(13)
+        .tickValues(threshold.domain())
+        .tickFormat(d3.format(".0%"));
+  
+      legend
+        .selectAll("rect")
+        .data(
+          threshold.range().map(function (color) {
+            var d = threshold.invertExtent(color);
+            if (d[0] == null) d[0] = x.domain()[0];
+            if (d[1] == null) d[1] = x.domain()[1];
+            return d;
+          })
+        )
+        .enter()
+        .append("rect")
+        .attr("height", 8)
+        .attr("x", (d) => x(d[0]))
+        .attr("width", (d) => x(d[1]) - x(d[0]))
+        .attr("fill", (d) => threshold(d[0]));
+  
+      legend.call(xAxisLegend);
+  
+      const bbox = legend.node().getBBox().width;
+      legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 27)");
+   
+
+
   }, [svgRef]);
 
   return (
