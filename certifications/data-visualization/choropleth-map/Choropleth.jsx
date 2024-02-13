@@ -32,6 +32,24 @@ export function Choropleth() {
         const county = educationData.find(({ fips }) => fips === d.id);
         return county.bachelorsOrHigher;
       })
+      .style("fill", (d) => {
+        const county = educationData.find(({ fips }) => fips === d.id).bachelorsOrHigher;
+        if (county <= 12) {
+          return "#deebf7";
+        } else if (county <= 21) {
+          return "#c6dbef";
+        } else if (county <= 30) {
+          return "#9ecae1";
+        } else if (county <= 39) {
+          return "#6baed6";
+        } else if (county <= 48) {
+          return "#4292c6";
+        } else if (county <= 57) {
+          return "#2171b5";
+        } else if (county <= 66) {
+          return "#08519c";
+        }
+      })
       .on("mousemove", function (event, d) {
         const [x, y] = d3.pointer(event);
         const mouseX = event.pageX;
@@ -55,9 +73,10 @@ export function Choropleth() {
 
       var threshold = d3
         .scaleThreshold()
-        .domain([.03, .12, .21, .3, .39, .48, .57, .66])
-        .range([
-          "#f7fbff",
+        .domain([.03, .12, .21, .3, .39, .48, .57, .66]) //8
+        .range([ //9
+          // "#f7fbff",
+          "",
           "#deebf7",
           "#c6dbef",
           "#9ecae1",
@@ -65,7 +84,7 @@ export function Choropleth() {
           "#4292c6",
           "#2171b5",
           "#08519c",
-          "#08306b",
+          // "#08306b",
         ]);
   
       var x = d3.scaleLinear().domain([.03, .66]).range([0, 250]);
