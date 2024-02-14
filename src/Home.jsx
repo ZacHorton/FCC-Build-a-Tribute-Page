@@ -36,7 +36,7 @@ export function Home() {
             <li><Link to="/scatterplot-graph">Scatterplot Graph</Link></li>
             <li><Link to="/heat-map">Heat Map</Link></li>
             <li><Link to="/choropleth-map">Choropleth Map</Link></li>
-            {/*<li><Link to="/treemap-diagram">Treemap Diagram</Link></li> */}
+            <li><Link to="/treemap-diagram">Treemap Diagram</Link></li>
           </ol> 
       </nav>
     </div>

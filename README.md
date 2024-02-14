@@ -26,4 +26,4 @@ Data Visualization Developer Certification
 2. [Scatterplot Graph](https://zac-horton-freecodecamp-projects.netlify.app/scatterplot-graph)
 3. [Heat Map](https://zac-horton-freecodecamp-projects.netlify.app/heat-map)
 4. [Choropleth Map](https://zac-horton-freecodecamp-projects.netlify.app/choropleth-map)
-<!-- 5. [Treemap Diagram](https://zac-horton-freecodecamp-projects.netlify.app/treemap-diagram) -->
+5. [Treemap Diagram](https://zac-horton-freecodecamp-projects.netlify.app/treemap-diagram)
