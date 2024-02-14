@@ -1,6 +1,14 @@
 .treemapContainer {
   cursor: default;
 
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
   #title {
     text-align: center;
     font-size: 170%;
