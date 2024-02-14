@@ -7,8 +7,8 @@ export function Treemap() {
   const svgRef = useRef();
 
   useEffect(() => {
-    const w = 1050;
-    const h = 600;
+    const w = 1300;
+    const h = 800;
     let svg = d3.select(svgRef.current).attr("width", w).attr("height", h);
 
     // Constructs a root node from the specified hierarchical data.
@@ -16,7 +16,7 @@ export function Treemap() {
 
     // Construct the treemap layout.
     const treemap = d3.treemap();
-    treemap.size([w, h]);
+    treemap.size([1050, 600]);
     treemap.padding(1);
 
     // Sum and sort the data.
@@ -35,7 +35,8 @@ export function Treemap() {
       .append("g")
       .attr(
         "transform",
-        (movie) => "translate(" + movie.x0 + ", " + movie.y0 + ")"
+        (movie) =>
+          "translate(" + (movie.x0 + 100) + ", " + (movie.y0 + 25) + ")"
       );
 
     const tooltip = d3
@@ -72,11 +73,19 @@ export function Treemap() {
 
     leaf
       .append("text")
-      .text((movie) => {
-        return movie.data.name;
+      .selectAll("tspan")
+      .data(function (d) {
+        return d.data.name.split(/(?=[A-Z][^A-Z])/g);
       })
-      .attr("x", 5)
-      .attr("y", 25);
+      .enter()
+      .append("tspan")
+      .attr("x", 4)
+      .attr("y", function (d, i) {
+        return 13 + i * 10;
+      })
+      .text(function (d) {
+        return d;
+      });
 
     leaf
       .on("mousemove", function (event, d) {
@@ -96,6 +105,88 @@ export function Treemap() {
       .on("mouseout", function () {
         tooltip.style("opacity", 0);
       });
+
+    const legend = svg.append("g").attr("id", "legend");
+
+    legend.append("text").attr("x", 0).attr("y", 25).text("Action");
+
+    legend
+      .append("rect")
+      .attr("x", 55)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#f94144")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 170).attr("y", 25).text("Adventure");
+
+    legend
+      .append("rect")
+      .attr("x", 250)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#f3722c")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 360).attr("y", 25).text("Comedy");
+
+    legend
+      .append("rect")
+      .attr("x", 425)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#43aa8b")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 525).attr("y", 25).text("Biography");
+
+    legend
+      .append("rect")
+      .attr("x", 605)
+      .attr("y", 16)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#f9c74f")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 0).attr("y", 50).text("Drama");
+
+    legend
+      .append("rect")
+      .attr("x", 55)
+      .attr("y", 41)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#577590")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 170).attr("y", 50).text("Animation");
+
+    legend
+      .append("rect")
+      .attr("x", 250)
+      .attr("y", 41)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#90be6d")
+      .attr("class", "legend-item");
+
+    legend.append("text").attr("x", 360).attr("y", 50).text("Family");
+
+    legend
+      .append("rect")
+      .attr("x", 425)
+      .attr("y", 41)
+      .attr("width", 25)
+      .attr("height", 9)
+      .attr("fill", "#f8961e")
+      .attr("class", "legend-item");
+
+    const bbox = legend.node().getBBox().width;
+    legend.attr("transform", "translate(" + (w / 2 - bbox / 2) + ", 650)");
   }, [svgRef]);
 
   return (

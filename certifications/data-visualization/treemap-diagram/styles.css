@@ -1,6 +1,6 @@
 .treemapContainer {
   cursor: default;
-  
+
   #title {
     text-align: center;
     font-size: 170%;
@@ -13,7 +13,7 @@
   }
 
   svg {
-    background-color: black;
+    font: 10px sans-serif;
   }
 
   #tooltip {
@@ -25,5 +25,9 @@
     pointer-events: none;
     border: 3px solid #00adb5;
     font-size: large;
+  }
+
+  #legend {
+    font: 12px sans-serif;
   }
 }
