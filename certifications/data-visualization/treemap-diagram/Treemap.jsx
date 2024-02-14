@@ -33,18 +33,21 @@ export function Treemap() {
       .data(root.leaves())
       .enter()
       .append("g")
-      .attr("transform", (movie) => {
-        return "translate(" + movie.x0 + ", " + movie.y0 + ")";
-      });
+      .attr(
+        "transform",
+        (movie) => "translate(" + movie.x0 + ", " + movie.y0 + ")"
+      );
+
+    const tooltip = d3
+      .select(".container")
+      .append("div")
+      .attr("id", "tooltip")
+      .style("opacity", 0);
 
     leaf
       .append("rect")
-      .attr("width", (movie) => {
-        return movie.x1 - movie.x0;
-      })
-      .attr("height", (movie) => {
-        return movie.y1 - movie.y0;
-      })
+      .attr("width", (movie) => movie.x1 - movie.x0)
+      .attr("height", (movie) => movie.y1 - movie.y0)
       .attr("class", "tile")
       .attr("fill", (movie) => {
         if (movie.data.category === "Action") {
@@ -63,14 +66,35 @@ export function Treemap() {
           return "#577590";
         }
       })
-      .attr("data-name", (movie) => {
+      .attr("data-name", (movie) => movie.data.name)
+      .attr("data-category", (movie) => movie.data.category)
+      .attr("data-value", (movie) => movie.data.value);
+
+    leaf
+      .append("text")
+      .text((movie) => {
         return movie.data.name;
       })
-      .attr("data-category", (movie) => {
-        return movie.data.category;
+      .attr("x", 5)
+      .attr("y", 25);
+
+    leaf
+      .on("mousemove", function (event, d) {
+        const [x, y] = d3.pointer(event);
+        const mouseX = event.pageX;
+        const mouseY = event.pageY;
+        tooltip
+          .attr("data-value", d.data.value)
+          .style("opacity", 1)
+          .style("left", mouseX + 10 + "px")
+          .style("top", mouseY + 10 + "px").html(`Name: ${d.data.name}<br>
+          Category: ${d.data.category}<br>
+          Value: $${d.data.value
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`);
       })
-      .attr("data-value", (movie) => {
-        return movie.data.value;
+      .on("mouseout", function () {
+        tooltip.style("opacity", 0);
       });
   }, [svgRef]);
 
