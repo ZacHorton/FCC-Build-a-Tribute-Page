@@ -14,7 +14,7 @@ import {BarChart} from "../certifications/data-visualization/bar-chart/BarChart.
 import {Scatterplot} from "../certifications/data-visualization/scatterplot-graph/Scatterplot.jsx"
 import {HeatMap} from "../certifications/data-visualization/heat-map/HeatMap.jsx"
 import {Choropleth} from "../certifications/data-visualization/choropleth-map/Choropleth.jsx"
-// import {Treemap} from "../certifications/data-visualization/treemap-diagram/placeholder.jsx"
+import {Treemap} from "../certifications/data-visualization/treemap-diagram/Treemap.jsx"
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
       <Route path="/scatterplot-graph" element={<Scatterplot />} />
       <Route path="/heat-map" element={<HeatMap />} />
       <Route path="/choropleth-map" element={<Choropleth />} />
-      {/*<Route path="/treemap-diagram" element={<TreemapDiagram />} />     */}
+      <Route path="/treemap-diagram" element={<Treemap />} />
     </Routes>
   )
 }
