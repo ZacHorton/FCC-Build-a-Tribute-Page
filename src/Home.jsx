@@ -30,7 +30,7 @@ export function Home() {
           <li><Link to="/javascript-calculator">JavaScript Calculator</Link></li>
           <li><Link to="/25+5-clock">25 + 5 Clock</Link></li>
         </ol>
-        <a>Data Visualization Developer Certification</a>
+        <a href="https://www.freecodecamp.org/certification/zachorton/data-visualization">Data Visualization Developer Certification</a>
           <ol>
             <li><Link to="/bar-chart">Bar Chart</Link></li>
             <li><Link to="/scatterplot-graph">Scatterplot Graph</Link></li>

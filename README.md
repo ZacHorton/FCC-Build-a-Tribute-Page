@@ -21,7 +21,7 @@
 4. [JavaScript Calculator](https://zac-horton-freecodecamp-projects.netlify.app/javascript-calculator)
 5. [25 + 5 Clock](https://zac-horton-freecodecamp-projects.netlify.app/25+5-clock)
 
-Data Visualization Developer Certification
+[Data Visualization Developer Certification](https://www.freecodecamp.org/certification/zachorton/data-visualization)
 1. [Bar Chart](https://zac-horton-freecodecamp-projects.netlify.app/bar-chart)
 2. [Scatterplot Graph](https://zac-horton-freecodecamp-projects.netlify.app/scatterplot-graph)
 3. [Heat Map](https://zac-horton-freecodecamp-projects.netlify.app/heat-map)
