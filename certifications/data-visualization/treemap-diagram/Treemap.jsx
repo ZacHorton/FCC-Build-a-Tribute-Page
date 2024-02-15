@@ -192,7 +192,7 @@ export function Treemap() {
   return (
     <div className="treemapContainer">
       <div className="container">
-        <div id="title">Video Game Sales</div>
+        <div id="title">Movie Sales</div>
         <div id="description">
           Top 100 Highest Grossing Movies Grouped By Genre
         </div>
