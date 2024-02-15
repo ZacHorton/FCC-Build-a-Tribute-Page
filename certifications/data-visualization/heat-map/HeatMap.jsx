@@ -6,27 +6,18 @@ import "./styles.css";
 export function HeatMap() {
   const svgRef = useRef();
 
-  dataset.monthlyVariance.forEach(function (d) {
-    d.year = new Date(d.year, 0);
-    d.month = new Date(2024, d.month - 1, 1);
-  });
-
   useEffect(() => {
     const w = 1050;
     const h = 600;
     const padding = 100;
-
-    const rectW =
-      (w - padding * 2) /
-      (d3.max(dataset.monthlyVariance, (d) => d.year.getFullYear()) -
-        d3.min(dataset.monthlyVariance, (d) => d.year.getFullYear()));
+    const rectW = 4;
     const rectH = (h - padding * 2) / 12;
 
     const xScale = d3
       .scaleTime()
       .domain([
-        d3.min(dataset.monthlyVariance, (d) => d.year),
-        d3.max(dataset.monthlyVariance, (d) => d.year),
+        d3.min(dataset.monthlyVariance, (d) => new Date(d.year, 0)),
+        d3.max(dataset.monthlyVariance, (d) => new Date(d.year, 0)),
       ])
       .range([padding, w - padding]);
 
@@ -93,11 +84,11 @@ export function HeatMap() {
         }
       })
       .attr("class", "cell")
-      .attr("data-month", (d) => d.month.getMonth())
-      .attr("data-year", (d) => d.year.getFullYear())
+      .attr("data-month", (d) => d.month - 1)
+      .attr("data-year", (d) => d.year)
       .attr("data-temp", (d) => d.variance)
-      .attr("x", (d) => xScale(d.year))
-      .attr("y", (d) => yScale(d.month.getMonth()))
+      .attr("x", (d) => xScale(new Date(d.year, 0)))
+      .attr("y", (d) => yScale(new Date(2024, d.month - 1, 1).getMonth()))
       .attr("width", rectW)
       .attr("height", rectH)
       .on("mousemove", function (event, d) {
@@ -105,15 +96,15 @@ export function HeatMap() {
         const mouseX = event.pageX;
         const mouseY = event.pageY;
         tooltip
-          .attr("data-year", d.year.getFullYear())
+          .attr("data-year", d.year)
           .style("opacity", 1)
           .style("left", mouseX + 10 + "px")
           .style(
             "top",
             mouseY + 10 + "px"
-          ).html(`${d.year.getFullYear()} - ${formatMonth(d.month.getMonth())}<br />
-          ${(dataset.baseTemperature + d.variance).toFixed(1)}<br />
-          ${d.variance.toFixed(1)}`);
+            ).html(`${d.year} - ${formatMonth(d.month - 1)}<br />
+            ${(dataset.baseTemperature + d.variance).toFixed(1)}<br />
+            ${d.variance.toFixed(1)}`);
       })
       .on("mouseout", function () {
         tooltip.style("opacity", 0);
