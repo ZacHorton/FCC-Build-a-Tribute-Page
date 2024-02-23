@@ -176,27 +176,36 @@ ALTER TABLE ONLY public.rentals ALTER COLUMN rental_id SET DEFAULT nextval('publ
 -- Data for Name: bikes; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.bikes VALUES (7, 'BMX', 19, true);
 INSERT INTO public.bikes VALUES (8, 'BMX', 20, true);
 INSERT INTO public.bikes VALUES (9, 'BMX', 21, true);
+INSERT INTO public.bikes VALUES (2, 'Mountain', 28, false);
+INSERT INTO public.bikes VALUES (3, 'Mountain', 29, false);
+INSERT INTO public.bikes VALUES (4, 'Road', 27, false);
+INSERT INTO public.bikes VALUES (5, 'Road', 28, false);
+INSERT INTO public.bikes VALUES (6, 'Road', 29, false);
+INSERT INTO public.bikes VALUES (7, 'BMX', 19, false);
 INSERT INTO public.bikes VALUES (1, 'Mountain', 27, true);
-INSERT INTO public.bikes VALUES (2, 'Mountain', 28, true);
-INSERT INTO public.bikes VALUES (3, 'Mountain', 29, true);
-INSERT INTO public.bikes VALUES (4, 'Road', 27, true);
-INSERT INTO public.bikes VALUES (5, 'Road', 28, true);
-INSERT INTO public.bikes VALUES (6, 'Road', 29, true);
 
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.customers VALUES (1, '555-5555', 'Me');
+INSERT INTO public.customers VALUES (2, '000-0000', 'Test');
 
 
 --
 -- Data for Name: rentals; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.rentals VALUES (2, 1, 2, '2021-05-25', NULL);
+INSERT INTO public.rentals VALUES (3, 1, 3, '2021-05-27', NULL);
+INSERT INTO public.rentals VALUES (4, 1, 4, '2021-05-27', NULL);
+INSERT INTO public.rentals VALUES (5, 1, 5, '2021-05-27', NULL);
+INSERT INTO public.rentals VALUES (6, 2, 6, '2021-05-27', NULL);
+INSERT INTO public.rentals VALUES (7, 2, 7, '2021-05-27', NULL);
+INSERT INTO public.rentals VALUES (1, 1, 1, '2021-05-25', '2021-05-27');
 
 
 --
@@ -210,14 +219,14 @@ SELECT pg_catalog.setval('public.bikes_bike_id_seq', 9, true);
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, false);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 2, true);
 
 
 --
 -- Name: rentals_rental_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.rentals_rental_id_seq', 1, false);
+SELECT pg_catalog.setval('public.rentals_rental_id_seq', 7, true);
 
 
 --
