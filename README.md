@@ -27,3 +27,10 @@
 3. [Heat Map](https://zac-horton-freecodecamp-projects.netlify.app/heat-map)
 4. [Choropleth Map](https://zac-horton-freecodecamp-projects.netlify.app/choropleth-map)
 5. [Treemap Diagram](https://zac-horton-freecodecamp-projects.netlify.app/treemap-diagram)
+
+[Relational Database Developer Certification](https://www.freecodecamp.org/certification/zachorton/relational-database-v8)
+1. [Celestial Bodies Database](https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/03-celestial-bodies-database)
+2. [World Cup Database](https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/06-world-cup-database)
+3. [Salon Appointment Scheduler](https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/09-salon-appointment-scheduler)
+4. [Periodic Table Database](https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/12-periodic-table)
+5. [Number Guessing Game](https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/13-number-guessing-game)

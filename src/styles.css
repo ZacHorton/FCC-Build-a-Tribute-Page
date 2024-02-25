@@ -10,7 +10,7 @@ div.homeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 20px;
   background-color: white;
 
   nav > a:first-child {

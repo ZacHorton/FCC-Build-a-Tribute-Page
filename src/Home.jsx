@@ -38,6 +38,14 @@ export function Home() {
             <li><Link to="/choropleth-map">Choropleth Map</Link></li>
             <li><Link to="/treemap-diagram">Treemap Diagram</Link></li>
           </ol> 
+          <a href="https://www.freecodecamp.org/certification/zachorton/relational-database-v8">Relational Database Developer Certification</a>
+          <ol>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/03-celestial-bodies-database">Celestial Bodies Database</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/06-world-cup-database">World Cup Database</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/09-salon-appointment-scheduler">Salon Appointment Scheduler</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/12-periodic-table">Periodic Table Database</a></li>
+          <li><a href="https://github.com/ZacHorton/freeCodeCamp-projects/tree/master/certifications/relational-database/13-number-guessing-game">Number Guessing Game</a></li>
+        </ol>
       </nav>
     </div>
   );
