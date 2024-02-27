@@ -1,0 +1,19 @@
+{
+	"name": "fcc-learn-npm-package-json",
+	"author": "Zac Horton",
+	"description": "Managing Packages with NPM",
+	"keywords": [ "freecodecamp", "Back End Development and APIs", "Managing Packages with NPM" ],
+	"license": "MIT",
+	"version": "1.0.0",
+	"dependencies": {
+		"express": "^4.14.0"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/freeCodeCamp/boilerplate-npm.git"
+	}
+}
